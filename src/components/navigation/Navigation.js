@@ -114,6 +114,7 @@ const Nav = styled.nav`
     transition: all 0.35s cubic-bezier(0.645, 0.045, 0.355, 1);
     transform: translateY(0) !important;
     z-index: 999;
+    background: var(--navbar);
 
     @media (min-width: 767px) {
       height: 100px;

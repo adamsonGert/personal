@@ -285,7 +285,7 @@ const Section = styled.section`
     transition: .2s;
 
     &:hover {
-      color: var(--textHover);
+      color: var(--primary);
     }
 
     svg {

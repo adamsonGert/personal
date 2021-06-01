@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Xolo",
+        "logo": "img/xolo.png",
+        "link": "../portfolio/xolo"
+    },
+    {
+        "name": "Aasa",
+        "logo": "img/aasa.png",
+        "link": "../portfolio/aasa"
+    },
+    {
+        "name": "Hubspot",
+        "logo": "img/hubspot.png",
+        "link": "../portfolio/hubspot"
+    },
+    {
+        "name": "Vue",
+        "logo": "img/vue.png",
+        "link": "../portfolio/vue"
+    },
+    {
+        "name": "Figma",
+        "logo": "img/figma.png",
+        "link": "../portfolio/figma"
+    },
+    {
+        "name": "Storybook",
+        "logo": "img/storybook.png",
+        "link": "../portfolio/storybook"
+    }
+]

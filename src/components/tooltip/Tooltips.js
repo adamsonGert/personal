@@ -41,6 +41,7 @@ const Tooltip = styled.div`
         color: white;;
         background: #494A4B;
         font-size: 12px;
+        font-display: block;
         font-family: 'Inter', sans-serif;
         line-height: 1;
         z-index: 100;

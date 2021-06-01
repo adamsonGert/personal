@@ -53,6 +53,7 @@ const GlobalStyle = createGlobalStyle`
         width:100%;
         background: var(--background);
         color: var(--text);
+        font-display: block;
         font-family: 'Inter', sans-serif;
         -webkit-font-smoothing: antialiased;
         display: block;

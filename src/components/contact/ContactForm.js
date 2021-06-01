@@ -423,6 +423,7 @@ const InputArea = styled.div`
 
   textarea {
     height: auto;
+    font-display: block;
     font-family: inherit;
     font-size: inherit;
   }

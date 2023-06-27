@@ -1,11 +1,11 @@
 import React from 'react';
-import { Layout, SEO, Hero } from 'components';
+import { Seo, Hero } from 'components';
  
 const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
+  <>
+    <Seo title="Home" description="A Front-End developer based in Estonia" />
     <Hero />
-  </Layout>
+  </>
 );
 
 export default IndexPage;

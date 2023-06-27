@@ -1,10 +1,11 @@
 import React from 'react';
-import { Layout, HubspotWork } from 'components';
+import { Seo, HubspotWork } from 'components';
 
 const Hubspot = () => (
-    <Layout>
+    <>
+        <Seo title="Hubspot" />
         <HubspotWork />
-    </Layout>
+    </>
 );
   
   export default Hubspot;

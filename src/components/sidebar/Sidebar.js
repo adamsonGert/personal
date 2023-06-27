@@ -1,73 +1,36 @@
-import React, { useState, useEffect } from 'react';
+import React from "react";
 import styled from 'styled-components';
-import anime from 'animejs';
-import { Tooltips } from 'components';
+import { ThemeToggler } from 'gatsby-plugin-dark-mode'
+import ThemeToggleIcon from './themetoggleicon/ThemeToggleIcon';
 
 import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
 
 const Sidebar = () => {
-
-  const moonPath = "M 27.5 0 C 34.791 0 41.79 2.899 46.945 8.055 C 52.101 13.21 55 20.209 55 27.5 C 55 34.791 52.101 41.79 46.945 46.945 C 41.79 52.101 34.791 55 27.5 55 C 20.209 55 13.21 52.101 8.055 46.945 C 2.899 41.79 0 34.791 0 27.5 C 0 20.209 2.899 13.21 8.055 8.055 C 13.21 2.899 20.209 0 27.5 0 Z";
-  const sunPath = "M 27.5 0 C 34.791 0 41.79 2.899 46.945 8.055 C 33.991 9.89 26.93 20.209 26.93 27.5 C 26.93 34.791 33.689 45.261 46.945 46.945 C 41.79 52.101 34.791 55 27.5 55 C 20.209 55 13.21 52.101 8.055 46.945 C 2.899 41.79 0 34.791 0 27.5 C 0 20.209 2.899 13.21 8.055 8.055 C 13.21 2.899 20.209 0 27.5 0 Z";
-
-  let websiteTheme;
-  if (typeof window !== `undefined`) {
-    websiteTheme = window.__theme;
-  }
-  useEffect(() => {
-    setTheme(window.__theme);
-  }, []);
-
-  const [theme, setTheme] = useState(websiteTheme);
-
-  const ThemeToggle = () => {
-    window.__setPreferredTheme(websiteTheme === 'dark' ? 'light' : 'dark');
-    setTheme(websiteTheme === 'dark' ? 'light' : 'dark');
-  };
-
-  if (typeof window !== "undefined") {
-    const animate = () => {
-      const loader = anime.timeline({
-      duration : 350,
-      easing: 'easeOutQuad'
-    });
-
-      loader
-        .add({
-          targets:".moon",
-          d:[{value: theme === 'dark' ? moonPath : sunPath}] 
-        })
-        .add({
-          targets:'#theme-icon',
-          rotate : theme === 'dark' ? 320 : 0
-        },"-=150")
-    };
-
-    animate();
-  }
-
   return (
       <>
       <SidebarContainer>
         <div className="sidebarLeft">
           <ul>
+            <li>
+            <ThemeToggler>
+                {({ theme, toggleTheme }) => (
+                  <ThemeToggleIcon
+                    isDarkMode={theme === 'dark'}
+                    onToggle={() =>
+                      toggleTheme(theme === 'dark' ? 'light' : 'dark')
+                    }
+                  />
+                )}
+              </ThemeToggler>
+            </li>
               <li>
-                <Button onClick={ThemeToggle} >
-                  <Tooltips content={theme === "light" ? 'Night Mode' : 'Day Mode'} direction="right">
-                    <svg id="theme-icon" width="20" height="20" viewBox="0 0 55 55" xmlns="http://www.w3.org/2000/svg">
-                      <path className="moon" d={theme === 'light' ? sunPath : moonPath} fill={theme === "light" ? 'black' : 'white'}/>
-                    </svg>
-                  </Tooltips>
-                </Button>
+                  <a href="https://github.com/adamsonGert" target="_blank" rel="noreferrer"><FaGithub aria-label="Github icon"/></a>
               </li>
               <li>
-                  <a href="https://github.com/adamsonGert"><FaGithub aria-label="Github icon"/></a>
+                  <a href="https://www.linkedin.com/in/gert-adamson-1b35b512b/" target="_blank" rel="noreferrer"><FaLinkedin aria-label="LinkedIn icon" /></a>
               </li>
               <li>
-                  <a href="https://www.linkedin.com/in/gert-adamson-1b35b512b/"><FaLinkedin aria-label="LinkedIn icon" /></a>
-              </li>
-              <li>
-                  <a href="https://www.instagram.com/gerrtt/"><FaInstagram aria-label="Instagram icon" /></a>
+                  <a href="https://www.instagram.com/gerrtt/" target="_blank" rel="noreferrer"><FaInstagram aria-label="Instagram icon" /></a>
               </li>
             </ul>
           </div>
@@ -165,10 +128,12 @@ const SidebarContainer = styled.div`
   }
 
   li {
-      padding: 10px;
+      padding-bottom: 25px;
   }
 
   .vertical-txt {
+    position: relative;
+    left: 2px;
     writing-mode: vertical-rl;
     cursor: pointer;
     transition: .2s;
@@ -179,7 +144,7 @@ const SidebarContainer = styled.div`
   }
 
   a {
-    display: inline-block;
+    display: flex;
     text-decoration: none;
     color: inherit;
     position: relative;
@@ -191,23 +156,3 @@ const SidebarContainer = styled.div`
     }
   }
 `;
-
-const Button = styled.button`
-    background: none;
-    border: none;
-    cursor: pointer;
-
-    svg {
-      font-size: 20px;
-
-      path {
-        transition: .2s;
-      }
-    }
-
-    svg path:hover {
-      fill: var(--title);
-    }
-`;
-
-

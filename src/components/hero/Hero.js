@@ -31,7 +31,7 @@ const Section = styled.section`
   align-items: flex-start;
   justify-content: center;
   width: 100%;
-  padding: 80px 0 0;
+  height: 100vh;
   
   @media (min-width: 768px) {
     padding: 0;

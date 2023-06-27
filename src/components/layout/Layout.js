@@ -1,32 +1,25 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Navigation, Sidebar, Footer } from 'components';
-import { GlobalStyle } from 'themes';
+import "themes/layout.css"
 
-const Layout = ({ children }) => {
-
+export default function Layout({ children }) {
   return (
     <>
         <Navigation />
         <Sidebar />
-        <Main className="container">{children}</Main>
+        <Main>{children}</Main>
         <Footer />
-        <GlobalStyle />
     </>
   )
 }
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
-
-const Main = styled.div`
+  
+  const Main = styled.div`
     margin: 0 auto;
     max-width: none;
-    min-height: 100vh;
     padding: 0 20px;
     display: flex;
+    flex-direction: column;
 
     @media (min-width: 1024px) {
       max-width: 800px;
@@ -40,5 +33,3 @@ const Main = styled.div`
       max-width: 1200px;
     }
 `;
-
-export default Layout;

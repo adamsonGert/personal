@@ -1,10 +1,11 @@
 import React from 'react';
-import { Layout, Portfolio } from 'components';
+import { Seo, Portfolio } from 'components';
 
 const PortfolioPage = () => (
-    <Layout>
+    <>
+        <Seo title="Portfolio" />
         <Portfolio />
-    </Layout>
+    </>
 );
   
   export default PortfolioPage;

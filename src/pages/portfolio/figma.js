@@ -1,10 +1,11 @@
 import React from 'react';
-import { Layout, FigmaWork } from 'components';
+import { Seo, FigmaWork } from 'components';
 
 const Figma = () => (
-    <Layout>
+    <>
+        <Seo title="Figma" />
         <FigmaWork />
-    </Layout>
+    </>
 );
   
   export default Figma;

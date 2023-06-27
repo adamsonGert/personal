@@ -1,5 +1,7 @@
 import About from './about';
+import Contact from './contact';
 
 export {
-    About
+    About,
+    Contact
 };

@@ -1,32 +1,47 @@
 [
     {
+        "name": "Next",
+        "logo": "img/nextjs.webp",
+        "link": "../portfolio/next"
+    },
+    {
+        "name": "React",
+        "logo": "img/react.webp",
+        "link": "../portfolio/react"
+    },
+    {
+        "name": "Vue",
+        "logo": "img/vue.webp",
+        "link": "../portfolio/vue"
+    },
+    {
         "name": "Xolo",
-        "logo": "img/xolo.png",
+        "logo": "img/xolo.webp",
         "link": "../portfolio/xolo"
     },
     {
         "name": "Aasa",
-        "logo": "img/aasa.png",
+        "logo": "img/aasa.webp",
         "link": "../portfolio/aasa"
     },
     {
         "name": "Hubspot",
-        "logo": "img/hubspot.png",
+        "logo": "img/hubspot.webp",
         "link": "../portfolio/hubspot"
     },
     {
-        "name": "Vue",
-        "logo": "img/vue.png",
-        "link": "../portfolio/vue"
-    },
-    {
         "name": "Figma",
-        "logo": "img/figma.png",
+        "logo": "img/figma.webp",
         "link": "../portfolio/figma"
     },
     {
         "name": "Storybook",
-        "logo": "img/storybook.png",
+        "logo": "img/storybook.webp",
         "link": "../portfolio/storybook"
+    },
+    {
+        "name": "Shopify",
+        "logo": "img/shopify.webp",
+        "link": "../portfolio/shopify"
     }
 ]

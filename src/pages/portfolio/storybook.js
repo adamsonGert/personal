@@ -1,10 +1,11 @@
 import React from 'react';
-import { Layout, StorybookWork } from 'components';
+import { Seo, StorybookWork } from 'components';
 
 const Storybook = () => (
-    <Layout>
+    <>
+        <Seo title="Storybook" />
         <StorybookWork />
-    </Layout>
+    </>
 );
   
   export default Storybook;

@@ -7,10 +7,19 @@ const Navbar = () => {
   const [Navbar, setVisible] = useState(false);
   const [Top, isTop] = useState(false);
   const [click, setClick] = useState(false);
-  const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
 
   const [scrollDir, setScrollDir] = useState(false);
+
+  const handleClick = () => {
+    setClick(!click);
+
+    if (!click) {
+      document.body.classList.add('no-scroll');
+    } else {
+      document.body.classList.remove('no-scroll');
+    }
+  };
 
   useEffect(() => {
     const threshold = 0;
@@ -111,7 +120,7 @@ const Nav = styled.nav`
     height: 80px;
     width: 100%;
     margin: 0 auto;
-    transition: all 0.35s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: all 0.35s cubic-bezier(0.645, 0.045, 0.355, 1), color 350ms ease 0s, background 350ms ease 0s;
     transform: translateY(0) !important;
     z-index: 999;
     background: var(--navbar);
@@ -122,6 +131,7 @@ const Nav = styled.nav`
 
     &-top {
       box-shadow: unset;
+      background: transparent;
     }
 
     &-scrolling {
@@ -441,6 +451,8 @@ const Nav = styled.nav`
 
       &.active {
         span {
+          background: #fff;
+          
           &:nth-child(1) {
             top: 18px;
             width: 0%;

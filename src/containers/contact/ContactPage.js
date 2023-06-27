@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { MdLocationOn, MdEmail } from 'react-icons/md';
 import styled from "styled-components";
-import emailjs from 'emailjs-com';
 
 const Contact = () => {
     const intialValues = { name: "", email: "", message: "" };
@@ -44,18 +43,19 @@ const Contact = () => {
     };
 
     useEffect(() => {
+      /*
         const submit = () => {
           document.getElementById("contact-form").reset();
           setIsFadingOut(false);
       
-          emailjs.sendForm('service_yivmgrd', 'gert_template','#contact-form', 'user_ZcMKtjGzxiwS92Xi7ZY3f')
+          //emailjs.sendForm('service_yivmgrd', 'gert_template','#contact-form', 'user_ZcMKtjGzxiwS92Xi7ZY3f')
       
             .then((result) => {
               console.log(result.text);
             }, (error) => {
                 console.log(error.text);
             }); 
-        };
+        }; */
       
         const resetForms = () => {
           setFormValues({
@@ -66,7 +66,7 @@ const Contact = () => {
         }
       
         if (Object.keys(formErrors).length === 0 && isSubmitting) {
-          submit();
+          //submit();
           resetForms();
       
           setTimeout(() => {

@@ -105,7 +105,7 @@ const Contact = () => {
                 <div className="screen-body-item">
                     <ContactForm className="contact-form" id="contact-form" onSubmit={sendEmail} noValidate>
                     <InputArea className="input-group">
-                        <input type="text" name="name" placeholder="Name" value={formValues.name}
+                        <input type="text" aria-label="Name input" name="name" placeholder="Name" value={formValues.name}
                         onChange={handleChange}
                         className={formErrors.name && "input-error"} />
                         <label htmlFor="name">Name</label>
@@ -114,7 +114,7 @@ const Contact = () => {
                         )}
                     </InputArea>
                     <InputArea className="input-group">
-                        <input type="email" name="email" placeholder="Email" value={formValues.email}
+                        <input type="email" aria-label="Email input" name="email" placeholder="Email" value={formValues.email}
                         onChange={handleChange}
                         className={formErrors.email && "input-error"} />
                         <label htmlFor="email">Email</label>
@@ -123,7 +123,7 @@ const Contact = () => {
                         )}
                     </InputArea>
                     <InputArea className="input-group">
-                        <textarea rows="5" type="text" name="subject" placeholder="Message" value={formValues.subject}
+                        <textarea rows="5" aria-label="Message text" type="text" name="subject" placeholder="Message" value={formValues.subject}
                         onChange={handleChange}
                         className={formErrors.subject && "input-error"} />
                         <label htmlFor="subject">Message</label>
@@ -131,7 +131,7 @@ const Contact = () => {
                         <div className="error">{formErrors.subject}</div>
                         )}
                     </InputArea>
-                    <input type="submit" className="btn-send" value="Send" />
+                    <input type="submit" aria-label="Submit button" className="btn-send" value="Send" />
                     </ContactForm>
                 </div>
                 </div>

@@ -58,7 +58,7 @@ const Navbar = () => {
         <Nav>
            <div className={`navbar${Navbar ? ' navbar-scrolling' : ''}${Top ? ' navbar-top' : ''}`}>
             <div className="navbar-container">
-              <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
+              <Link to='/' className='navbar-logo' aria-label='Logo' onClick={closeMobileMenu}>
                 <Logo href="/" aria-label="home" />
               </Link>
           
@@ -74,7 +74,7 @@ const Navbar = () => {
                 </li>
               </ul>
 
-              <div className={click ? 'navbar-menu-btn active' : 'navbar-menu-btn'} onClick={handleClick} onKeyDown={handleClick} role="button" tabIndex={0}>
+              <div className={click ? 'navbar-menu-btn active' : 'navbar-menu-btn'} onClick={handleClick} onKeyDown={handleClick} aria-label='Burger menu button' role="button" tabIndex={0}>
                 <span /><span /><span /><span />
               </div>
 

@@ -9,7 +9,7 @@ const Hero = () => {
           <div className="inner-wrapper">
             <Heading>
             <h1><span>Gert</span> Adamson</h1>
-            <h3>Front-end Developer</h3>
+            <h2>Front-end Developer</h2>
               <Link to='/about' className='button'>
                 <div className="line"></div> 
                 <div className="line"></div>
@@ -64,7 +64,7 @@ const Heading = styled.div`
       }
     }
 
-    h3 {
+    h2 {
       font-size: 12px;
       letter-spacing: 2px;
       text-transform: uppercase;

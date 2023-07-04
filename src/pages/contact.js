@@ -5,10 +5,14 @@ import { Contact } from 'containers';
 const ContactPage = () => (
     <>
         <Layout>
-            <Seo title="Contact" />
             <Contact />
         </Layout>
     </>
 );
   
-  export default ContactPage;
+export default ContactPage;
+
+  
+export const Head = () => (
+    <Seo title="Contact | Gert" description="Contact page" />
+)

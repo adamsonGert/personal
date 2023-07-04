@@ -7,7 +7,6 @@ const AboutPage = () => {
   return (
     <>
       <Layout>
-        <Seo title="About" />
         <About />
       </Layout>
     </>
@@ -15,3 +14,7 @@ const AboutPage = () => {
 };
   
 export default AboutPage;
+
+export const Head = () => (
+  <Seo title="About | Gert" description="About Gert" />
+)

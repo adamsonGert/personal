@@ -4,10 +4,13 @@ import {Layout, Seo, AasaWork } from 'components';
 const Aasa = () => (
     <>
         <Layout>
-            <Seo title="Aasa" />
             <AasaWork />
         </Layout>
     </>
 );
   
-  export default Aasa;
+export default Aasa;
+
+export const Head = () => (
+    <Seo title="Aasa | Gert" description="Aasa portfolio page" />
+)

@@ -51,7 +51,7 @@ const Heading = styled.div`
     h1 {
       position: relative;
       font-size: 40px;
-      font-weight: 500;
+      font-weight: 700;
       margin-bottom: 15px;
       color: var(--text);
       

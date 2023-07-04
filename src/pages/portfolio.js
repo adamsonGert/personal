@@ -4,10 +4,13 @@ import { Layout, Seo, Portfolio } from 'components';
 const PortfolioPage = () => (
     <>
         <Layout>
-            <Seo title="Portfolio" />
             <Portfolio />
         </Layout>
     </>
 );
-  
-  export default PortfolioPage;
+    
+export default PortfolioPage;
+
+export const Head = () => (
+    <Seo title="Portfolio | Gert" description="Portfolio listing page" />
+)

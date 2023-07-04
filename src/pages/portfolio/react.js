@@ -4,10 +4,13 @@ import { Layout, Seo, ReactWork } from 'components';
 const TheReact = () => (
     <>
         <Layout>
-            <Seo title="React" />
             <ReactWork />
         </Layout>
     </>
 );
   
   export default TheReact;
+
+  export const Head = () => (
+    <Seo title="React | Gert" description="React portfolio page" />
+)

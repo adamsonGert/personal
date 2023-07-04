@@ -4,10 +4,13 @@ import { Layout, Seo, FigmaWork } from 'components';
 const Figma = () => (
     <>
         <Layout>
-            <Seo title="Figma" />
             <FigmaWork />
         </Layout>
     </>
 );
   
-  export default Figma;
+export default Figma;
+
+export const Head = () => (
+    <Seo title="Figma | Gert" description="Figma portfolio page" />
+)

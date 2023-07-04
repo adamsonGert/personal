@@ -1,8 +1,10 @@
 module.exports = {
   siteMetadata: {
-    title: `Gert's Portfolio`,
-    description: `Gert's portfolio site`,
-    author: `@gert`,
+    title: `Portfolio | Gert`,
+    description: `Portfolio website by Gert`,
+    twitterUsername: `@gert`,
+    image: `images/favicon.png`,
+    siteUrl: `https://gertadamson.gatsbyjs.io/`,
   },
   plugins: [
     {
@@ -11,7 +13,6 @@ module.exports = {
     {
       resolve: `gatsby-plugin-styled-components`,
     },
-    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {

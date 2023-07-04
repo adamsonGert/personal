@@ -4,10 +4,13 @@ import { Layout, Seo, VueWork } from 'components';
 const Vue = () => (
     <>
     <Layout>
-      <Seo title="Vue" />
       <VueWork />
     </Layout>
     </>
 );
   
-  export default Vue;
+export default Vue;
+
+export const Head = () => (
+  <Seo title="Vue | Gert" description="Vue portfolio page" />
+)

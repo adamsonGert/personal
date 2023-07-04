@@ -4,10 +4,13 @@ import { Layout, Seo, NextWork } from 'components';
 const Next = () => (
     <>
         <Layout>
-            <Seo title="Next" />
             <NextWork />
         </Layout>
     </>
 );
   
-  export default Next;
+export default Next;
+
+export const Head = () => (
+    <Seo title="Next | Gert" description="Next portfolio page" />
+)

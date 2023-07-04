@@ -4,10 +4,13 @@ import { Layout, Seo, ShopifyWork } from 'components';
 const Shopify = () => (
     <>
         <Layout>
-            <Seo title="Shopify" />
             <ShopifyWork />
         </Layout>
     </>
 );
   
   export default Shopify;
+
+export const Head = () => (
+    <Seo title="Shopify | Gert" description="Shopify portfolio page" />
+)

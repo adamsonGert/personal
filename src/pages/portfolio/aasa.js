@@ -1,10 +1,12 @@
 import React from 'react';
-import { Seo, AasaWork } from 'components';
+import {Layout, Seo, AasaWork } from 'components';
 
 const Aasa = () => (
     <>
-        <Seo title="Aasa" />
-        <AasaWork />
+        <Layout>
+            <Seo title="Aasa" />
+            <AasaWork />
+        </Layout>
     </>
 );
   

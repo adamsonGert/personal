@@ -1,10 +1,12 @@
 import React from 'react';
-import { Seo, ShopifyWork } from 'components';
+import { Layout, Seo, ShopifyWork } from 'components';
 
 const Shopify = () => (
     <>
-        <Seo title="Shopify" />
-        <ShopifyWork />
+        <Layout>
+            <Seo title="Shopify" />
+            <ShopifyWork />
+        </Layout>
     </>
 );
   

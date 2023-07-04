@@ -1,10 +1,12 @@
 import React from 'react';
-import { Seo, VueWorkWeatherApp } from 'components';
+import { Layout, Seo, VueWorkWeatherApp } from 'components';
 
 const VueWeatherApp = () => (
     <>
-        <Seo title="Vue Weather App" />
-        <VueWorkWeatherApp />
+        <Layout>
+            <Seo title="Vue Weather App" />
+            <VueWorkWeatherApp />
+        </Layout>
     </>
 );
   

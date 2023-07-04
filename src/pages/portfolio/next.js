@@ -1,10 +1,12 @@
 import React from 'react';
-import { Seo, NextWork } from 'components';
+import { Layout, Seo, NextWork } from 'components';
 
 const Next = () => (
     <>
-        <Seo title="Next" />
-        <NextWork />
+        <Layout>
+            <Seo title="Next" />
+            <NextWork />
+        </Layout>
     </>
 );
   

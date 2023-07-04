@@ -1,10 +1,12 @@
 import React from 'react';
-import { Seo, XoloWork } from 'components';
+import { Layout, Seo, XoloWork } from 'components';
 
 const Xolo = () => (
     <>
-        <Seo title="Xolo" />
-        <XoloWork />
+        <Layout>
+            <Seo title="Xolo" />
+            <XoloWork />
+        </Layout>
     </>
 );
   

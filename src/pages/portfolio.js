@@ -1,10 +1,12 @@
 import React from 'react';
-import { Seo, Portfolio } from 'components';
+import { Layout, Seo, Portfolio } from 'components';
 
 const PortfolioPage = () => (
     <>
-        <Seo title="Portfolio" />
-        <Portfolio />
+        <Layout>
+            <Seo title="Portfolio" />
+            <Portfolio />
+        </Layout>
     </>
 );
   

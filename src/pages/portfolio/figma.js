@@ -1,10 +1,12 @@
 import React from 'react';
-import { Seo, FigmaWork } from 'components';
+import { Layout, Seo, FigmaWork } from 'components';
 
 const Figma = () => (
     <>
-        <Seo title="Figma" />
-        <FigmaWork />
+        <Layout>
+            <Seo title="Figma" />
+            <FigmaWork />
+        </Layout>
     </>
 );
   

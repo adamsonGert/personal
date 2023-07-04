@@ -1,10 +1,12 @@
 import React from 'react';
-import { Seo, StorybookWork } from 'components';
+import { Layout, Seo, StorybookWork } from 'components';
 
 const Storybook = () => (
     <>
-        <Seo title="Storybook" />
-        <StorybookWork />
+        <Layout>
+            <Seo title="Storybook" />
+            <StorybookWork />
+        </Layout>
     </>
 );
   

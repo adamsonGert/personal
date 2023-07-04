@@ -1,10 +1,12 @@
 import React from 'react';
-import { Seo, VueWork } from 'components';
+import { Layout, Seo, VueWork } from 'components';
 
 const Vue = () => (
     <>
-    <Seo title="Vue" />
-    <VueWork />
+    <Layout>
+      <Seo title="Vue" />
+      <VueWork />
+    </Layout>
     </>
 );
   

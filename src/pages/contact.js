@@ -1,11 +1,13 @@
 import React from 'react';
-import { Seo } from 'components';
+import { Layout, Seo } from 'components';
 import { Contact } from 'containers';
 
 const ContactPage = () => (
     <>
-        <Seo title="Contact" />
-        <Contact />
+        <Layout>
+            <Seo title="Contact" />
+            <Contact />
+        </Layout>
     </>
 );
   

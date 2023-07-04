@@ -1,10 +1,12 @@
 import React from 'react';
-import { Seo, ReactWork } from 'components';
+import { Layout, Seo, ReactWork } from 'components';
 
 const TheReact = () => (
     <>
-        <Seo title="React" />
-        <ReactWork />
+        <Layout>
+            <Seo title="React" />
+            <ReactWork />
+        </Layout>
     </>
 );
   

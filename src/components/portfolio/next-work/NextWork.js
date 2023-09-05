@@ -45,17 +45,25 @@ const NextWork = () => {
       <PortfolioPageWrapper>
         <Link to='/portfolio' className="link-back"><FaArrowLeft />Projects</Link>
         <div className="banner-wrapper">
-          <GatsbyImage className="banner-img" image={data.banner.childImageSharp.gatsbyImageData} alt="Image of Next Banner" />
+          <GatsbyImage className="banner-img" image={data.banner.childImageSharp.gatsbyImageData} alt="Image of Next Banner" data-sal="fade"
+            data-sal-duration="1000"
+            data-sal-easing="ease" />
         </div>
-        <div className="about-wrapper">
+        <div className="about-wrapper" data-sal="slide-down"
+            data-sal-duration="1000"
+            data-sal-easing="ease">
           <h4>About NextJS</h4>
           <p>The React Framework for the Web which enables to create full-stack Web applications by extending the latest React features</p>
         </div>
         <div className="grid grid-left grid-details">
-          <figure className="grid-media">
+          <figure className="grid-media" data-sal="slide-right"
+            data-sal-duration="1000"
+            data-sal-easing="ease">
               <GatsbyImage className="platform-img" image={data.platform.childImageSharp.gatsbyImageData} alt="Image of Next Platform"/>
           </figure>
-          <div className="grid-text">
+          <div className="grid-text" data-sal="slide-left"
+            data-sal-duration="1000"
+            data-sal-easing="ease">
             <div className="list">
               <h4>Details</h4>
               <ul>
@@ -76,15 +84,21 @@ const NextWork = () => {
           </div>
         </div>
 
-        <div className="section-title">
+        <div className="section-title" data-sal="slide-down"
+            data-sal-duration="1000"
+            data-sal-easing="ease">
           Showcase
         </div>
 
         <div className="grid">
-          <figure className="grid-media">
+          <figure className="grid-media" data-sal="slide-left" data-sal-mobile="none"
+            data-sal-duration="1000"
+            data-sal-easing="ease">
               <GatsbyImage image={data.hero.childImageSharp.gatsbyImageData} alt="Image of Blog's hero area" />
           </figure>
-          <div className="grid-text">
+          <div className="grid-text" data-sal="slide-right"
+            data-sal-duration="1000"
+            data-sal-easing="ease">
             <p className="heading-title">Botany</p>
             <h3>A blog called "Botany" that is built with NextJS</h3>
 
@@ -102,10 +116,14 @@ const NextWork = () => {
           </div>
         </div>
         <div className="grid grid-left">
-          <figure className="grid-media">
+          <figure className="grid-media" data-sal="slide-right"
+            data-sal-duration="1000"
+            data-sal-easing="ease">
               <GatsbyImage image={data.allposts.childImageSharp.gatsbyImageData} alt="Image of blog posts"/>
           </figure>
-          <div className="grid-text">
+          <div className="grid-text" data-sal="slide-right"
+            data-sal-duration="1000"
+            data-sal-easing="ease">
             <p className="heading-title">Blog posts</p>
             <h3>Display of blog posts using React hooks</h3>
             <a href="https://blog-nextjs-adamsongert.vercel.app/" target="_blank" rel="noreferrer" className="link-more">
@@ -122,10 +140,14 @@ const NextWork = () => {
           </div>
         </div>
         <div className="grid">
-          <figure className="grid-media">
+          <figure className="grid-media" data-sal="slide-left"
+            data-sal-duration="1000"
+            data-sal-easing="ease">
               <GatsbyImage image={data.post.childImageSharp.gatsbyImageData} alt="Image of blog post" />
           </figure>
-          <div className="grid-text">
+          <div className="grid-text" data-sal="slide-right"
+            data-sal-duration="1000"
+            data-sal-easing="ease">
             <p className="heading-title">Blog post</p>
             <h3>Blog post view that was fetched using Next.js App Router</h3>
             <a href="https://blog-nextjs-adamsongert.vercel.app/posts/1" target="_blank" rel="noreferrer" className="link-more">
@@ -142,10 +164,14 @@ const NextWork = () => {
           </div>
         </div>
         <div className="grid grid-left">
-          <figure className="grid-media">
+          <figure className="grid-media" data-sal="slide-right"
+            data-sal-duration="1000"
+            data-sal-easing="ease">
               <GatsbyImage image={data.search.childImageSharp.gatsbyImageData} alt="Image of search feature"/>
           </figure>
-          <div className="grid-text">
+          <div className="grid-text" data-sal="slide-left"
+            data-sal-duration="1000"
+            data-sal-easing="ease">
             <p className="heading-title">Search</p>
             <h3>A search feature for finding blog posts</h3>
             <a href="https://blog-nextjs-adamsongert.vercel.app/results?query=plant" target="_blank" rel="noreferrer" className="link-more">

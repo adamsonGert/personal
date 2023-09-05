@@ -7,7 +7,9 @@ const Hero = () => {
   return (
         <Section id="hero">
           <div className="inner-wrapper">
-            <Heading>
+            <Heading data-sal="slide-up"
+            data-sal-duration="1500"
+            data-sal-easing="ease">
             <h1><span>Gert</span> Adamson</h1>
             <h2>Front-end Developer</h2>
               <Link to='/about' className='button'>
@@ -30,11 +32,12 @@ const Section = styled.section`
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
+  min-height: calc(100vh - 148px);
   width: 100%;
-  height: 100vh;
   
   @media (min-width: 768px) {
     padding: 0;
+    min-height: calc(100vh - 48px);
     flex-direction: row;
     justify-content: space-between;
     align-items: center;

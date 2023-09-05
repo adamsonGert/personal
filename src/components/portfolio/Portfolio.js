@@ -34,12 +34,14 @@ const Portfolio = () => {
     <Section id='portfolio'>
       <PortfolioWrapper ref={ref}>
         {items.map(({ node }, index) =>
-          <Link to={`${node.link}`} key={index} className="portfolio-item">
+          <Link to={`${node.link}`} key={index} className="portfolio-item" data-sal="slide-down" data-sal-duration="1000">
             {node.logo && <GatsbyImage image={node.logo.childImageSharp.gatsbyImageData} alt={`${node.name} image`} />}
           </Link>
         )}
       </PortfolioWrapper>
     </Section>
+
+
   );
 };
 
@@ -47,9 +49,11 @@ const Section = styled.section`
   height: 100%;
   width: 100%;
   padding: 100px 0 50px;
+  min-height: calc(100vh - 148px);
 
   @media (min-width: 767px) {
     align-self: center;
+    min-height: calc(100vh - 48px);
   }
 `;
 
@@ -70,14 +74,15 @@ const PortfolioWrapper = styled.div`
   .portfolio-item {
     width: 100%;
     height: 300px;
+    border-radius: 5px;
     position: relative;
     display: flex;
     flex-flow: column;
     justify-content: flex-end;
     border: 1px solid var(--formBorder);
+    background: var(--portfolioItemBg);
     cursor: pointer;
     overflow: hidden;
-    transition: border-color .3s;
 
     @media (min-width: 1440px) {
       height: 100%;

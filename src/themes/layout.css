@@ -14,6 +14,7 @@ body {
     --formInput: #ebeff2;
     --formBorder: #ebeff2;
     --formBorderHover: #3e424c;
+    --portfolioItemBg: linear-gradient(180deg,rgba(35,37,49,.05),rgba(15,15,24,.05));
     --hr: #ebeff2;
 }
 
@@ -32,6 +33,7 @@ body.dark {
     --formInput: #021527;
     --formBorder: #02192f;
     --formBorderHover: #ffff;
+    --portfolioItemBg: linear-gradient(180deg,rgba(35,37,49,.3),rgba(15,15,24,.3));
     --hr: #3e424c; 
 }
 

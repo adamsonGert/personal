@@ -77,7 +77,9 @@ const Contact = () => {
 
     return (
         <Section id='contact'>
-            <Screen>
+            <Screen data-sal="slide-down"
+                data-sal-duration="1000"
+                data-sal-easing="ease">
                 <div className="screen-header">
                 <div className="screen-header-left">
                     <div className="screen-header-button close"></div>

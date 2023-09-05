@@ -125,10 +125,14 @@ h4 {
     }
 
     h3 {
-      font-size: 32px;
+      font-size: 28px;
       line-height: 1.2;
       margin-bottom: 20px;
-      font-weight: normal;
+      font-weight: 600;
+
+      @media (min-width: 768px) {
+        font-size: 32px;
+      }
     }
 
     .list {
@@ -356,6 +360,13 @@ h4 {
     height: 100%;
   }
 }
+
+@media (max-width: 768px) {
+  [data-sal-mobile] {
+    animation-name: none !important;
+  }
+}
+
 `;
 
 export default PortfolioPage;

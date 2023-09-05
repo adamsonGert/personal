@@ -16,11 +16,13 @@ const About = () => {
 
   return (
     <Section id='about'>
-      <AboutText>
+      <AboutText data-sal="slide-right"
+      data-sal-duration="1500"
+      data-sal-easing="ease">
         <span className="section-title">About</span>
         <div>
           <p>A front-end developer who focuses on writing clean code that breaks the design down into the components and providing best solutions to user related problems. I would describe myself as someone who is consistently growing, versatile, and ambitious. Outside of programming, I enjoy video games, Netflix shows, sushi, and creating good memories with my friends.</p>
-          <p>Here are a few technologies I'm familiar with:</p>
+          <p>Here are a few technologies I've worked with:</p>
         </div>
         <div>
           <ul className="technology-list">
@@ -30,10 +32,14 @@ const About = () => {
             <li>Styled Components</li>
             <li>React & Gatsby</li>
             <li>Hubspot</li>
+            <li>NextJS</li>
+            <li>VueJS</li>
           </ul>
         </div>
       </AboutText>
-      <div className="image-wrapper">
+      <div className="image-wrapper" data-sal="slide-left"
+      data-sal-duration="1500"
+      data-sal-easing="ease">
         {data.profile && (
           <GatsbyImage
             className="profile-image"
@@ -52,11 +58,12 @@ const Section = styled.section`
   grid-template-columns: 3fr 3fr;
   gap: 65px;
   padding-top: 100px;
-  height: 100vh;
+  min-height: calc(100vh - 148px);
 
-  @media (min-width: 767px) {
+  @media (min-width: 768px) {
     display: grid;
     padding-top: 0;
+    min-height: calc(100vh - 48px);
   }
 
   .image-wrapper {

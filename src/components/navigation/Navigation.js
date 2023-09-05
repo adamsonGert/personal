@@ -7,9 +7,12 @@ const Navbar = () => {
   const [Navbar, setVisible] = useState(false);
   const [Top, isTop] = useState(false);
   const [click, setClick] = useState(false);
-  const closeMobileMenu = () => setClick(false);
-
   const [scrollDir, setScrollDir] = useState(false);
+
+  const closeMobileMenu = () => {
+    setClick(false);
+    document.body.classList.remove('no-scroll');
+  };
 
   const handleClick = () => {
     setClick(!click);

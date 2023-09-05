@@ -52,11 +52,15 @@ const ReactWork = () => {
         <GatsbyImage
           className="banner-img"
           image={data.banner.childImageSharp.gatsbyImageData}
-          alt="Image of React banner"
+          alt="Image of React banner" data-sal="fade"
+          data-sal-duration="1000"
+          data-sal-easing="ease"
         />
       </div>
       
-      <div className="about-wrapper">
+      <div className="about-wrapper" data-sal="slide-down"
+            data-sal-duration="1000"
+            data-sal-easing="ease">
         <h4>About React & Firebase Authentication</h4>
         <p>
           React is a declarative, efficient, and flexible JavaScript library for building user interfaces & Firebase Authentication provides backend services, easy-to-use SDKs, and ready-made UI libraries to authenticate users to my app.
@@ -64,14 +68,18 @@ const ReactWork = () => {
       </div>
       
       <div className="grid grid-left grid-details">
-        <figure className="grid-media">
+        <figure className="grid-media" data-sal="slide-right"
+            data-sal-duration="1000"
+            data-sal-easing="ease">
           <GatsbyImage
             className="platform-img"
             image={data.platform.childImageSharp.gatsbyImageData}
             alt="Image of React platform"
           />
         </figure>
-        <div className="grid-text">
+        <div className="grid-text" data-sal="slide-left"
+            data-sal-duration="1000"
+            data-sal-easing="ease">
           <div className="list">
             <h4>Details</h4>
             <ul>
@@ -90,15 +98,21 @@ const ReactWork = () => {
         </div>
       </div>
 
-      <div className="section-title">
+      <div className="section-title" data-sal="fade"
+            data-sal-duration="1000"
+            data-sal-easing="ease">
         Showcase
       </div>
 
       <div className="grid text-start-5">
-        <figure className="grid-media">
+        <figure className="grid-media" data-sal="slide-left"
+            data-sal-duration="1000"
+            data-sal-easing="ease">
           <GatsbyImage image={data.loginsignup.childImageSharp.gatsbyImageData} alt="Image of Login and Signup page"/>
         </figure>
-        <div className="grid-text">
+        <div className="grid-text" data-sal="slide-right"
+            data-sal-duration="1000"
+            data-sal-easing="ease">
           <p className="heading-title">Authentication page</p>
           <h3>Login & Signup page</h3>
           <a href="https://auth-production-4a4bc.web.app/login-signup" target="_blank" rel="noreferrer" className="link-more">
@@ -116,10 +130,14 @@ const ReactWork = () => {
       </div>
 
       <div className="grid grid-left">
-        <figure className="grid-media">
+        <figure className="grid-media" data-sal="slide-right"
+            data-sal-duration="1000"
+            data-sal-easing="ease">
           <GatsbyImage image={data.dashboard.childImageSharp.gatsbyImageData} alt="Image of Dashboard"/>
         </figure>
-        <div className="grid-text">
+        <div className="grid-text" data-sal="slide-left"
+            data-sal-duration="1000"
+            data-sal-easing="ease">
           <p className="heading-title">Dashboard</p>
           <h3>Dashboard view</h3>
           <p>Welcome screen with today's date and route buttons</p>
@@ -138,10 +156,14 @@ const ReactWork = () => {
       </div>
 
       <div className="grid text-start-5">
-        <figure className="grid-media">
+        <figure className="grid-media" data-sal="slide-left"
+            data-sal-duration="1000"
+            data-sal-easing="ease">
           <GatsbyImage image={data.edit.childImageSharp.gatsbyImageData} alt="Image of edit page"/>
         </figure>
-        <div className="grid-text">
+        <div className="grid-text" data-sal="slide-right"
+            data-sal-duration="1000"
+            data-sal-easing="ease">
           <p className="heading-title">Profile</p>
           <h3>Profile edit page</h3>
           <p>Ability to set/edit name, change email or password.</p>
@@ -160,10 +182,14 @@ const ReactWork = () => {
       </div>
 
       <div className="grid grid-left">
-        <figure className="grid-media">
+        <figure className="grid-media" data-sal="slide-right"
+            data-sal-duration="1000"
+            data-sal-easing="ease">
           <GatsbyImage image={data.todo.childImageSharp.gatsbyImageData} alt="Image of ToDo page"/>
         </figure>
-        <div className="grid-text">
+        <div className="grid-text" data-sal="slide-left"
+            data-sal-duration="1000"
+            data-sal-easing="ease">
           <p className="heading-title">To-do</p>
           <h3>To-do Page</h3>
           <p>Classic create-read-edit-delete todo list.</p>

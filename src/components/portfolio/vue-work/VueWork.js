@@ -52,9 +52,13 @@ const VueWork = () => {
       </div>
 
       <div className="banner-wrapper">
-        <GatsbyImage image={data.banner.childImageSharp.gatsbyImageData} alt="Image of Vue banner"/>
+        <GatsbyImage image={data.banner.childImageSharp.gatsbyImageData} alt="Image of Vue banner" data-sal="slide-down"
+            data-sal-duration="1000"
+            data-sal-easing="ease"/>
       </div>
-      <div className="about-wrapper">
+      <div className="about-wrapper" data-sal="slide-down"
+            data-sal-duration="1000"
+            data-sal-easing="ease">
         <h4>About VueJS & Firebase Realtime Database</h4>
         <p>
           Vue is a progressive framework for building user interfaces & The Firebase Realtime Database is a cloud-hosted
@@ -62,10 +66,14 @@ const VueWork = () => {
         </p>
       </div>
       <div className="grid grid-left grid-details">
-        <figure className="grid-media">
+        <figure className="grid-media" data-sal="slide-right"
+            data-sal-duration="1000"
+            data-sal-easing="ease">
           <GatsbyImage image={data.platform.childImageSharp.gatsbyImageData} alt="Image of Vue platform" />
         </figure>
-        <div className="grid-text">
+        <div className="grid-text" data-sal="slide-left"
+            data-sal-duration="1000"
+            data-sal-easing="ease">
           <div className="list">
             <h4>Details</h4>
             <ul>
@@ -106,13 +114,19 @@ const VueWork = () => {
         </div>
       </div>
 
-      <div className="section-title">Showcase</div>
+      <div className="section-title" data-sal="slide-down"
+            data-sal-duration="1000"
+            data-sal-easing="ease">Showcase</div>
 
       <div className="grid text-start-5">
-        <figure className="grid-media">
+        <figure className="grid-media" data-sal="slide-left"
+            data-sal-duration="1000"
+            data-sal-easing="ease">
           <GatsbyImage image={data.create.childImageSharp.gatsbyImageData} alt="Image of Create list"/>
         </figure>
-        <div className="grid-text">
+        <div className="grid-text" data-sal="slide-right"
+            data-sal-duration="1000"
+            data-sal-easing="ease">
           <p className="heading-title">Create table</p>
           <h3>Create a new creative</h3>
           <a href="https://adamsongert.github.io/#/" target="_blank" rel="noreferrer" className="link-more">
@@ -130,10 +144,14 @@ const VueWork = () => {
       </div>
 
       <div className="grid grid-left">
-        <figure className="grid-media">
+        <figure className="grid-media" data-sal="slide-right"
+            data-sal-duration="1000"
+            data-sal-easing="ease">
           <GatsbyImage image={data.list.childImageSharp.gatsbyImageData} alt="Image of Create list table view"/>
         </figure>
-        <div className="grid-text">
+        <div className="grid-text" data-sal="slide-left"
+            data-sal-duration="1000"
+            data-sal-easing="ease">
           <p className="heading-title">Table with data</p>
           <h3>Creative list table view</h3>
           <a href="https://adamsongert.github.io/#/" target="_blank" rel="noreferrer" className="link-more">
@@ -151,10 +169,14 @@ const VueWork = () => {
       </div>
 
       <div className="grid text-start-5">
-        <figure className="grid-media">
+        <figure className="grid-media" data-sal="slide-left"
+            data-sal-duration="1000"
+            data-sal-easing="ease">
           <GatsbyImage image={data.edit.childImageSharp.gatsbyImageData} alt="Image of Table with edit functions"/>
         </figure>
-        <div className="grid-text">
+        <div className="grid-text" data-sal="slide-right"
+            data-sal-duration="1000"
+            data-sal-easing="ease">
           <p className="heading-title">Table with edit functions</p>
           <h3>Creative edit view</h3>
           <a href="https://adamsongert.github.io/#/" target="_blank" rel="noreferrer" className="link-more">
@@ -172,10 +194,14 @@ const VueWork = () => {
       </div>
 
       <div className="grid grid-left">
-        <figure className="grid-media">
+        <figure className="grid-media" data-sal="slide-right"
+            data-sal-duration="1000"
+            data-sal-easing="ease">
           <GatsbyImage image={data.form.childImageSharp.gatsbyImageData} alt="Image of Table form information" />
         </figure>
-        <div className="grid-text">
+        <div className="grid-text" data-sal="slide-left"
+            data-sal-duration="1000"
+            data-sal-easing="ease">
           <p className="heading-title">Table with form information</p>
           <h3>Creative form info</h3>
           <a href="https://adamsongert.github.io/#/" target="_blank" rel="noreferrer" className="link-more">

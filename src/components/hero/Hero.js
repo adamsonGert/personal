@@ -5,25 +5,23 @@ import { Link } from 'gatsby';
 const Hero = () => {
   
   return (
-        <Section id="hero">
-          <div className="inner-wrapper">
-            <Heading data-sal="slide-up"
-            data-sal-duration="1500"
-            data-sal-easing="ease">
-            <h1><span>Gert</span> Adamson</h1>
-            <h2>Front-end Developer</h2>
-              <Link to='/about' className='button'>
-                <div className="line"></div> 
-                <div className="line"></div>
-                <div className="line"></div> 
-                <div className="line"></div> 
-                <div className="line"></div> 
-                <div className="line"></div> 
-                <span>Continue</span>
-              </Link>
-            </Heading>
-          </div>
-        </Section>
+      <Section id="hero">
+        <div className="inner-wrapper">
+          <Heading className="animated-element">
+          <h1><span>Gert</span> Adamson</h1>
+          <h2>Front-end Developer</h2>
+            <Link to='/about' className='button'>
+              <div className="line"></div> 
+              <div className="line"></div>
+              <div className="line"></div> 
+              <div className="line"></div> 
+              <div className="line"></div> 
+              <div className="line"></div> 
+              <span>Continue</span>
+            </Link>
+          </Heading>
+        </div>
+      </Section>
     );
   };
 
@@ -46,6 +44,9 @@ const Section = styled.section`
 
 const Heading = styled.div`
   max-width: 600px;
+  opacity: 0;
+  animation: slideInFromBottom 1s forwards;
+  transition: opacity 1s cubic-bezier(.23, 1, .32, 1), transform 1s cubic-bezier(.23, 1, .32, 1);
   
   @media (min-width: 768px) {
     flex: 3;
@@ -165,6 +166,18 @@ const Heading = styled.div`
           bottom: 0;
           right: -1px;
         }
+      }
+    }
+
+    @keyframes slideInFromBottom {
+      0% {
+        transform: translateY(30%);
+        opacity: 0;
+      }
+
+      100% {
+        transform: translateY(0);
+        opacity: 1;
       }
     }
 `;

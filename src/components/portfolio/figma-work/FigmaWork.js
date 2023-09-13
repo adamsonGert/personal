@@ -47,15 +47,19 @@ const FigmaWork = () => {
       <div className="banner-wrapper">
         <GatsbyImage className="banner-img" image={data.banner.childImageSharp.gatsbyImageData} alt="Image of Figma banner" />
       </div>
-      <div className="about-wrapper">
+      <div className="about-wrapper animated-element" data-sal="slide-up"
+          data-sal-duration="800"
+          data-sal-easing="ease">
         <h4>About Figma</h4>
         <p>Figma is a web-based graphics editing and user interface design app. It can be used to do all kinds of graphic design work from wireframing websites, designing mobile app interfaces, prototyping designs, crafting social media posts, and everything in between.</p>
       </div>
       <div className="grid grid-left grid-details">
         <figure className="grid-media">
-            <GatsbyImage className="platform-img" image={data.platform.childImageSharp.gatsbyImageData} alt="Image of Figma platform" />
+          <GatsbyImage className="platform-img" image={data.platform.childImageSharp.gatsbyImageData} alt="Image of Figma platform" />
         </figure>
-        <div className="grid-text">
+        <div className="grid-text animated-element" data-sal="slide-up"
+            data-sal-duration="800"
+            data-sal-easing="ease">
           <div className="list">
             <h4>Details</h4>
             <ul>
@@ -77,25 +81,35 @@ const FigmaWork = () => {
         </div>
       </div>
 
-      <div className="section-title">
+      <div className="section-title animated-element" data-sal="slide-up"
+          data-sal-duration="800"
+          data-sal-easing="ease">
         Showcase
       </div>
 
       <div className="grid">
-        <figure className="grid-media">
+        <figure className="grid-media animated-element" data-sal="slide-left"
+            data-sal-duration="800"
+            data-sal-easing="ease">
           <GatsbyImage image={data.pages.childImageSharp.gatsbyImageData} alt="Image of Figma pages" />
         </figure>
-        <div className="grid-text">
+        <div className="grid-text animated-element" data-sal="slide-right"
+            data-sal-duration="800"
+            data-sal-easing="ease">
           <p className="heading-title">Landing page design</p>
           <h3>A brexit themed landing page design made with Figma</h3>
         </div>
       </div>
 
       <div className="grid grid-left">
-        <figure className="grid-media">
+        <figure className="grid-media animated-element" data-sal="slide-right"
+            data-sal-duration="800"
+            data-sal-easing="ease">
           <GatsbyImage image={data.blog.childImageSharp.gatsbyImageData} alt="Image of Figma blog" />
         </figure>
-        <div className="grid-text">
+        <div className="grid-text animated-element" data-sal="slide-left"
+            data-sal-duration="800"
+            data-sal-easing="ease">
           <p className="heading-title">Blog design</p>
           <h3>Listing page design for Xolo's Blog</h3>
           <a href="https://www.blog.xolo.io" target="_blank" rel="noreferrer" className="link-more">
@@ -113,10 +127,14 @@ const FigmaWork = () => {
       </div>
 
       <div className="grid">
-        <figure className="grid-media">
+        <figure className="grid-media animated-element" data-sal="slide-left"
+            data-sal-duration="800"
+            data-sal-easing="ease">
           <GatsbyImage image={data.banners.childImageSharp.gatsbyImageData} alt="Image of Figma banners" />
         </figure>
-        <div className="grid-text">
+        <div className="grid-text animated-element" data-sal="slide-right"
+            data-sal-duration="800"
+            data-sal-easing="ease">
           <p className="heading-title">Social media</p>
           <h3>Creating banners & social media post designs for Xolo Marketing team</h3>
           <a href="https://www.instagram.com/xolopreneur/" target="_blank" rel="noreferrer" className="link-more">
@@ -134,10 +152,14 @@ const FigmaWork = () => {
       </div>
 
       <div className="grid grid-left">
-        <figure className="grid-media">
+        <figure className="grid-media animated-element" data-sal="slide-right"
+            data-sal-duration="800"
+            data-sal-easing="ease">
           <GatsbyImage image={data.logos.childImageSharp.gatsbyImageData} alt="Image of Figma logos" />
         </figure>
-        <div className="grid-text">
+        <div className="grid-text animated-element" data-sal="slide-left"
+            data-sal-duration="800"
+            data-sal-easing="ease">
           <p className="heading-title">Logo Designs</p>
           <h3>Logo design's created with Figma & Illustrator</h3>
         </div>

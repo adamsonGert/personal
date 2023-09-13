@@ -38,7 +38,9 @@ const ShopifyWork = () => {
       <div className="banner-wrapper">
         <GatsbyImage image={data.banner.childImageSharp.gatsbyImageData} alt="Image of Shopify banner" />
       </div>
-      <div className="about-wrapper">
+      <div className="about-wrapper animated-element" data-sal="slide-up"
+          data-sal-duration="800"
+          data-sal-easing="ease">
         <h4>About Shopify & Balinest e-commerce website</h4>
         <p>
           Shopify is a leading eCommerce platform that allows you to create an online shopping website that integrates with social networking, post products, cart and payment features, order processing. This platform offers all of the business tools you need in one, familiar place.
@@ -49,7 +51,9 @@ const ShopifyWork = () => {
         <figure className="grid-media">
           <GatsbyImage image={data.platform.childImageSharp.gatsbyImageData} alt="Image of Shopify platform" />
         </figure>
-        <div className="grid-text">
+        <div className="grid-text animated-element" data-sal="slide-up"
+            data-sal-duration="800"
+            data-sal-easing="ease">
           <div className="list">
             <h4>Details</h4>
             <ul>
@@ -73,7 +77,6 @@ const ShopifyWork = () => {
               </li>
             </ul>
           </div>
-
           <div className="list">
             <h4>Purpose of this project</h4>
             <ul>
@@ -90,14 +93,20 @@ const ShopifyWork = () => {
           </div>
         </div>
       </div>
-
-      <div className="section-title">Showcase</div>
-
+      <div className="section-title animated-element" data-sal="slide-up"
+          data-sal-duration="800"
+          data-sal-easing="ease">
+        Showcase
+      </div>
       <div className="grid text-start-5">
-        <figure className="grid-media">
+        <figure className="grid-media animated-element" data-sal="slide-left"
+            data-sal-duration="800"
+            data-sal-easing="ease">
           <GatsbyImage image={data.list.childImageSharp.gatsbyImageData} alt="Image of Balinest homepage" />
         </figure>
-        <div className="grid-text">
+        <div className="grid-text animated-element" data-sal="slide-right"
+            data-sal-duration="800"
+            data-sal-easing="ease">
           <p className="heading-title">Homepage</p>
           <h3>Balinest homepage</h3>
           <a href="https://web.archive.org/web/20211215182939/https://balinest.eu/" target="_blank" rel="noreferrer" className="link-more">
@@ -113,12 +122,15 @@ const ShopifyWork = () => {
           </a>
         </div>
       </div>
-
       <div className="grid grid-left">
-        <figure className="grid-media">
+        <figure className="grid-media animated-element" data-sal="slide-right"
+            data-sal-duration="800"
+            data-sal-easing="ease">
           <GatsbyImage image={data.edit.childImageSharp.gatsbyImageData} alt="Image of Balinest products view"/>
         </figure>
-        <div className="grid-text">
+        <div className="grid-text animated-element" data-sal="slide-left"
+            data-sal-duration="800"
+            data-sal-easing="ease">
           <p className="heading-title">Products view</p>
           <h3>Example of different products in Furniture category</h3>
           <a href="https://web.archive.org/web/20211130123713/https://balinest.eu/collections/home-decor" target="_blank" rel="noreferrer" className="link-more">

@@ -2,6 +2,7 @@ import React from 'react';
 import styled from "styled-components";
 import { graphql, useStaticQuery } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
+import { FaArrowRight } from 'react-icons/fa';
 
 const About = () => {
   const data = useStaticQuery(graphql`
@@ -16,30 +17,22 @@ const About = () => {
 
   return (
     <Section id='about'>
-      <AboutText data-sal="slide-right"
-      data-sal-duration="1500"
-      data-sal-easing="ease">
+      <AboutText>
         <span className="section-title">About</span>
-        <div>
           <p>A front-end developer who focuses on writing clean code that breaks the design down into the components and providing best solutions to user related problems. I would describe myself as someone who is consistently growing, versatile, and ambitious. Outside of programming, I enjoy video games, Netflix shows, sushi, and creating good memories with my friends.</p>
           <p>Here are a few technologies I've worked with:</p>
-        </div>
-        <div>
           <ul className="technology-list">
-            <li>HTML & (S)CSS</li>
-            <li>Javascript</li>
-            <li>Wordpress</li>
-            <li>Styled Components</li>
-            <li>React & Gatsby</li>
-            <li>Hubspot</li>
-            <li>NextJS</li>
-            <li>VueJS</li>
+            <li><FaArrowRight />HTML & (S)CSS</li>
+            <li><FaArrowRight />Javascript</li>
+            <li><FaArrowRight />Wordpress</li>
+            <li><FaArrowRight />Styled Components</li>
+            <li><FaArrowRight />React & Gatsby</li>
+            <li><FaArrowRight />Hubspot</li>
+            <li><FaArrowRight />NextJS</li>
+            <li><FaArrowRight />VueJS</li>
           </ul>
-        </div>
       </AboutText>
-      <div className="image-wrapper" data-sal="slide-left"
-      data-sal-duration="1500"
-      data-sal-easing="ease">
+      <figure className="image-wrapper">
         {data.profile && (
           <GatsbyImage
             className="profile-image"
@@ -47,13 +40,14 @@ const About = () => {
             alt="Profile Image"
           />
         )}
-      </div>
+      </figure>
     </Section>
   );
 };
 
 const Section = styled.section`
-  display: block;
+  display: flex;
+  flex-direction: column-reverse;
   align-items: center;
   grid-template-columns: 3fr 3fr;
   gap: 65px;
@@ -68,6 +62,13 @@ const Section = styled.section`
 
   .image-wrapper {
     width: 100%;
+    animation: slideInFromRight 1s forwards;
+    transition: all 1s ease;
+    transition: opacity 1s cubic-bezier(.23, 1, .32, 1), transform 1s cubic-bezier(.23, 1, .32, 1);
+
+    @media (max-width: 768px) {
+      animation: slideInFromBottom 1s forwards;
+    }
 
     .profile-image {
       width: 300px;
@@ -96,6 +97,14 @@ const AboutText = styled.div`
   color: var(--text);
   line-height: 1.75;
   margin-bottom: 20px;
+  opacity: 0;
+  animation: slideInFromLeft 1s forwards;
+  transition: opacity 1s cubic-bezier(.23, 1, .32, 1), transform 1s cubic-bezier(.23, 1, .32, 1);
+
+  @media (max-width: 768px) {
+    animation: slideInFromBottom 1s forwards;
+    animation-delay: .25s;
+  }
 
   .technology-list {
     display: grid;
@@ -108,20 +117,55 @@ const AboutText = styled.div`
 
     li {
       position: relative;
-      margin-bottom: 10px;
-      padding-left: 25px;
-      color: var(--text);
+      padding: 16px 0 0 calc(16px * 2);
+      display: flex;
+      align-items: center;
 
-      &:before {
-        content: "→";
+      svg {
         position: absolute;
+        top: var(--spacer);
         left: 0;
         color: var(--primary);
-        font-size: 15px;
-        line-height: 28px;
       }
     }
   }
+
+  @keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-20%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(20%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(20%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 `;
   
 export default About;

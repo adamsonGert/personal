@@ -1,7 +1,17 @@
-import React from "react"
+import React, { useEffect } from "react"
 import styled from 'styled-components';
 
 const PortfolioPage = ({ children }) => {
+
+  useEffect(() => {
+    if (window.innerWidth <= 768) {
+      const animatedElements = document.querySelectorAll('.animated-element');
+      animatedElements.forEach(element => {
+        element.setAttribute('data-sal', 'slide-up');
+      });
+    }
+  }, []);
+
   return (
     <PortfolioPageWrapper>
       {children}
@@ -358,12 +368,6 @@ h4 {
   .banner-img {
     width: 100%;
     height: 100%;
-  }
-}
-
-@media (max-width: 768px) {
-  [data-sal-mobile] {
-    animation-name: none !important;
   }
 }
 

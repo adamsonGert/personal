@@ -4,36 +4,31 @@ import { useStaticQuery, Link, graphql } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { FaCalendarAlt, FaTag, FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
-const NextWork = () => {
+const WoocommerceWork = () => {
 
   const data = useStaticQuery(graphql`
   query {
-    banner: file(relativePath: { eq: "portfolio/next/next-banner.webp" }) {
+    banner: file(relativePath: { eq: "portfolio/woocommerce/woocommerce-banner.webp" }) {
       childImageSharp {
         gatsbyImageData(layout: FULL_WIDTH)
       }
     }
-    platform: file(relativePath: { eq: "portfolio/next/next-banner-small.webp" }) {
+    platform: file(relativePath: { eq: "portfolio/woocommerce/woocommerce-banner-small.webp" }) {
       childImageSharp {
         gatsbyImageData(layout: FULL_WIDTH)
       }
     }
-    hero: file(relativePath: { eq: "portfolio/next/gallery/hero-block.webp" }) {
+    hero: file(relativePath: { eq: "portfolio/woocommerce/gallery/hero-block.webp" }) {
       childImageSharp {
         gatsbyImageData(layout: FULL_WIDTH)
       }
     }
-    allposts: file(relativePath: { eq: "portfolio/next/gallery/all-posts-block.webp" }) {
+    services: file(relativePath: { eq: "portfolio/woocommerce/gallery/services-block.webp" }) {
       childImageSharp {
         gatsbyImageData(layout: FULL_WIDTH)
       }
     }
-    post: file(relativePath: { eq: "portfolio/next/gallery/post-block.webp" }) {
-      childImageSharp {
-        gatsbyImageData(layout: FULL_WIDTH)
-      }
-    }
-    search: file(relativePath: { eq: "portfolio/next/gallery/search-block.webp" }) {
+    payment: file(relativePath: { eq: "portfolio/woocommerce/gallery/payment-block.webp" }) {
       childImageSharp {
         gatsbyImageData(layout: FULL_WIDTH)
       }
@@ -50,8 +45,8 @@ const NextWork = () => {
         <div className="about-wrapper animated-element" data-sal="slide-up"
             data-sal-duration="800"
             data-sal-easing="ease">
-          <h4>About NextJS</h4>
-          <p>The React Framework for the Web which enables to create full-stack Web applications by extending the latest React features</p>
+          <h4>About Woocommerce</h4>
+          <p>WooCommerce is a customizable e-commerce platform built for WordPress, enabling businesses to set up and run online stores.</p>
         </div>
         <div className="grid grid-left grid-details">
           <figure className="grid-media">
@@ -63,7 +58,7 @@ const NextWork = () => {
             <div className="list">
               <h4>Details</h4>
               <ul>
-                <li><FaCalendarAlt/><span><strong>Date:</strong>&nbsp;February 13th, 2023</span></li>
+                <li><FaCalendarAlt/><span><strong>Date:</strong>&nbsp;January 30th, 2023</span></li>
                 <li><FaTag/><span><strong>Category:</strong>&nbsp;Web development/Design</span></li>
               </ul>
             </div>
@@ -71,10 +66,10 @@ const NextWork = () => {
             <div className="list">
               <h4>Purpose of this project</h4>
               <ul>
-                <li><FaArrowRight/>Learn basics of NextJS</li>
-                <li><FaArrowRight />Learn React hooks for fetching the blog data</li>
-                <li><FaArrowRight/>Learn how to deploy using Vercel</li>
-                <li><FaArrowRight />Learn TailwindCSS</li>
+                <li><FaArrowRight/>Learn Woocommerce</li>
+                <li><FaArrowRight />Learn how to maintain e-commerce store</li>
+                <li><FaArrowRight/>Learn how to set up a wordpress site</li>
+                <li><FaArrowRight />Learn payment solution integration</li>
               </ul>
             </div>
           </div>
@@ -90,15 +85,15 @@ const NextWork = () => {
           <figure className="grid-media animated-element" data-sal="slide-left"
             data-sal-duration="800"
             data-sal-easing="ease">
-              <GatsbyImage image={data.hero.childImageSharp.gatsbyImageData} alt="Image of Blog's hero area" />
+              <GatsbyImage image={data.hero.childImageSharp.gatsbyImageData} alt="Image of Woocommerce's hero area" />
           </figure>
           <div className="grid-text animated-element" data-sal="slide-right"
             data-sal-duration="800"
             data-sal-easing="ease">
-            <p className="heading-title">Botany</p>
-            <h3>A blog called "Botany" that is built with NextJS</h3>
+            <p className="heading-title">Consultancy & schooling</p>
+            <h3>A consultancy & tutoring website for kindergarden teachers and parents</h3>
 
-            <a href="https://blog-nextjs-adamsongert.vercel.app/" target="_blank" rel="noreferrer" className="link-more">
+            <a href="https://kristiopetab.ee" target="_blank" rel="noreferrer" className="link-more">
               <span className="arrow -left">
                 <span className="shaft"></span>
               </span>
@@ -115,14 +110,14 @@ const NextWork = () => {
           <figure className="grid-media animated-element" data-sal="slide-right"
             data-sal-duration="800"
             data-sal-easing="ease">
-              <GatsbyImage image={data.allposts.childImageSharp.gatsbyImageData} alt="Image of blog posts"/>
+              <GatsbyImage image={data.services.childImageSharp.gatsbyImageData} alt="Image of services"/>
           </figure>
           <div className="grid-text animated-element" data-sal="slide-left"
             data-sal-duration="800"
             data-sal-easing="ease">
-            <p className="heading-title">Blog posts</p>
-            <h3>Display of blog posts using React hooks</h3>
-            <a href="https://blog-nextjs-adamsongert.vercel.app/" target="_blank" rel="noreferrer" className="link-more">
+            <p className="heading-title">Services</p>
+            <h3>Display of services</h3>
+            <a href="https://kristiopetab.ee/teenused" target="_blank" rel="noreferrer" className="link-more">
               <span className="arrow -left">
                 <span className="shaft"></span>
               </span>
@@ -139,52 +134,18 @@ const NextWork = () => {
           <figure className="grid-media animated-element" data-sal="slide-left"
             data-sal-duration="800"
             data-sal-easing="ease">
-              <GatsbyImage image={data.post.childImageSharp.gatsbyImageData} alt="Image of blog post" />
+              <GatsbyImage image={data.payment.childImageSharp.gatsbyImageData} alt="Image of payment" />
           </figure>
           <div className="grid-text animated-element" data-sal="slide-right"
             data-sal-duration="800"
             data-sal-easing="ease">
-            <p className="heading-title">Blog post</p>
-            <h3>Blog post view that was fetched using Next.js App Router</h3>
-            <a href="https://blog-nextjs-adamsongert.vercel.app/posts/1" target="_blank" rel="noreferrer" className="link-more">
-              <span className="arrow -left">
-                <span className="shaft"></span>
-              </span>
-              <span className="main">
-                <span className="arrow-label">See more</span>
-                <span className="arrow -right">
-                  <span className="shaft"></span>
-                </span>
-              </span>
-            </a>
-          </div>
-        </div>
-        <div className="grid grid-left">
-          <figure className="grid-media animated-element" data-sal="slide-right"
-            data-sal-duration="800"
-            data-sal-easing="ease">
-              <GatsbyImage image={data.search.childImageSharp.gatsbyImageData} alt="Image of search feature"/>
-          </figure>
-          <div className="grid-text animated-element" data-sal="slide-left"
-            data-sal-duration="800"
-            data-sal-easing="ease">
-            <p className="heading-title">Search</p>
-            <h3>A search feature for finding blog posts</h3>
-            <a href="https://blog-nextjs-adamsongert.vercel.app/results?query=plant" target="_blank" rel="noreferrer" className="link-more">
-              <span className="arrow -left">
-                <span className="shaft"></span>
-              </span>
-              <span className="main">
-                <span className="arrow-label">See live demo</span>
-                <span className="arrow -right">
-                  <span className="shaft"></span>
-                </span>
-              </span>
-            </a>
+            <p className="heading-title">Payment view</p>
+            <h3>Payment section</h3>
+            <p>User selects a payment method and completes the form to purchase the service.</p>
           </div>
         </div>
       </PortfolioPageWrapper>
     );
   };
 
-export default NextWork
+export default WoocommerceWork

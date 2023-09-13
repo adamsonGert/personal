@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'gatsby';
+import { useLocation } from "@reach/router";
 import styled from 'styled-components';
 import { Logo } from 'components';
 
 const Navbar = () => {
-  const [Navbar, setVisible] = useState(false);
-  const [Top, isTop] = useState(false);
+  const [isNavbarVisible, setIsNavbarVisible] = useState(false);
+  const [isTop, setIsTop] = useState(false);
   const [click, setClick] = useState(false);
-  const [scrollDir, setScrollDir] = useState(false);
+  const location = useLocation();
+  const isPortfolioActive = location.pathname.startsWith('/portfolio');
 
   const closeMobileMenu = () => {
     setClick(false);
@@ -16,7 +18,6 @@ const Navbar = () => {
 
   const handleClick = () => {
     setClick(!click);
-
     if (!click) {
       document.body.classList.add('no-scroll');
     } else {
@@ -29,7 +30,7 @@ const Navbar = () => {
     let lastScrollY = window.pageYOffset;
     let ticking = false;
 
-    const updateScrollDir = () => {
+    const updateNavbar = () => {
       const scrollY = window.pageYOffset;
 
       if (Math.abs(scrollY - lastScrollY) < threshold) {
@@ -37,15 +38,15 @@ const Navbar = () => {
         return;
       }
 
-      setScrollDir(scrollY > lastScrollY ? setVisible(true) : setVisible(false));
-      setScrollDir(scrollY <= 0 ? isTop(true) : isTop(false));
+      setIsNavbarVisible(scrollY > lastScrollY);
+      setIsTop(scrollY <= 0);
       lastScrollY = scrollY > 0 ? scrollY : 0;
       ticking = false;
     };
 
     const onScroll = () => {
       if (!ticking) {
-        window.requestAnimationFrame(updateScrollDir);
+        window.requestAnimationFrame(updateNavbar);
         ticking = true;
       }
     };
@@ -53,66 +54,70 @@ const Navbar = () => {
     window.addEventListener("scroll", onScroll);
 
     return () => window.removeEventListener("scroll", onScroll);
-  }, [scrollDir]);
-
+  }, []);
 
   return (
-    <>
-        <Nav>
-           <div className={`navbar${Navbar ? ' navbar-scrolling' : ''}${Top ? ' navbar-top' : ''}`}>
-            <div className="navbar-container">
-              <Link to='/' className='navbar-logo' aria-label='Logo' onClick={closeMobileMenu}>
-                <Logo href="/" aria-label="home" />
+    <Nav>
+      <div className={`navbar${isNavbarVisible ? ' navbar-scrolling' : ''}${isTop ? ' navbar-top' : ''}`}>
+        <div className="navbar-container">
+          <Link to='/' className='navbar-logo' aria-label='Logo' onClick={closeMobileMenu}>
+            <Logo href="/" aria-label="home" />
+          </Link>
+      
+          <ul className="navbar-menu">
+            <li className="navbar-menu-item">
+              <Link to='/about' className='navbar-links' onClick={closeMobileMenu} activeClassName='navbar-link-active'>
+                About
               </Link>
-          
-              <ul className="navbar-menu">
-                <li className="navbar-menu-item">
-                  <Link to='/about' className='navbar-links' activeClassName='navbar-link-active'>About</Link>
+            </li>
+            <li className="navbar-menu-item">
+              <Link to='/portfolio' className={`navbar-links ${isPortfolioActive ? 'navbar-link-active' : ''}`} onClick={closeMobileMenu}>
+                Portfolio
+              </Link>
+            </li>
+            <li className="navbar-menu-item">
+              <Link to='/contact' className='navbar-links' onClick={closeMobileMenu} activeClassName='navbar-link-active'>
+                Contact
+              </Link>
+            </li>
+          </ul>
+
+          <div className={click ? 'navbar-menu-btn active' : 'navbar-menu-btn'} onClick={handleClick} onKeyDown={handleClick} aria-label='Burger menu button' role="button" tabIndex={0}>
+            <span /><span /><span /><span />
+          </div>
+
+          <aside className={click ? 'navbar-sidebar active' : 'navbar-sidebar'}>
+            <div className="navbar-sidebar-container">
+              <ul>
+                <li className='navbar-sidebar-item'>
+                  <Link to='/' className='navbar-sidebar-links' onClick={closeMobileMenu} activeClassName='sidebar-link-active'> 
+                    Home
+                  </Link>
                 </li>
-                <li className="navbar-menu-item">
-                  <Link to='/portfolio' className='navbar-links' activeClassName='navbar-link-active'>Portfolio</Link>
+                <li className='navbar-sidebar-item'>
+                  <Link to='/about' className='navbar-sidebar-links' onClick={closeMobileMenu} activeClassName='sidebar-link-active'>
+                    About
+                  </Link>
                 </li>
-                <li className="navbar-menu-item">
-                  <Link to='/contact' className='navbar-links' activeClassName='navbar-link-active'>Contact</Link>
+                <li className='navbar-sidebar-item'>
+                  <Link to='/portfolio' className={`navbar-sidebar-links ${isPortfolioActive ? 'sidebar-link-active' : ''}`} onClick={closeMobileMenu}>
+                    Portfolio
+                  </Link>
+                </li>
+                <li className='navbar-sidebar-item'>
+                  <Link to='/contact' className='navbar-sidebar-links' onClick={closeMobileMenu} activeClassName='sidebar-link-active'>
+                    Contact
+                  </Link>
                 </li>
               </ul>
-
-              <div className={click ? 'navbar-menu-btn active' : 'navbar-menu-btn'} onClick={handleClick} onKeyDown={handleClick} aria-label='Burger menu button' role="button" tabIndex={0}>
-                <span /><span /><span /><span />
-              </div>
-
-              <aside className={click ? 'navbar-sidebar active' : 'navbar-sidebar'}>
-                <div className="navbar-sidebar-container">
-                  <ul>
-                    <li className='navbar-sidebar-item'>
-                      <Link to='/' className='navbar-sidebar-links' onClick={closeMobileMenu} activeClassName='sidebar-link-active'> 
-                        Home
-                      </Link>
-                    </li>
-                    <li className='navbar-sidebar-item'>
-                      <Link to='/about' className='navbar-sidebar-links' onClick={closeMobileMenu} activeClassName='sidebar-link-active'>
-                        About
-                      </Link>
-                    </li>
-                    <li className='navbar-sidebar-item'>
-                      <Link to='/portfolio' className='navbar-sidebar-links' onClick={closeMobileMenu} activeClassName='sidebar-link-active'>
-                        Portfolio
-                      </Link>
-                    </li>
-                    <li className='navbar-sidebar-item'>
-                      <Link to='/contact' className='navbar-sidebar-links' onClick={closeMobileMenu} activeClassName='sidebar-link-active'>
-                        Contact
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
-              </aside>
             </div>
-          </div>
-      </Nav>
-    </>
+          </aside>
+        </div>
+      </div>
+    </Nav>
   );
 }
+
 
 const Nav = styled.nav`
 
@@ -123,7 +128,7 @@ const Nav = styled.nav`
     height: 80px;
     width: 100%;
     margin: 0 auto;
-    transition: all 0.35s cubic-bezier(0.645, 0.045, 0.355, 1), color 350ms ease 0s, background 350ms ease 0s;
+    transition: all .35s cubic-bezier(.645, .045, .355, 1), color 350ms ease 0s, background 350ms ease 0s;
     transform: translateY(0) !important;
     z-index: 999;
     background: var(--navbar);
@@ -275,6 +280,7 @@ const Nav = styled.nav`
           padding: 0;
           list-style-type: none;
           height: 100%;
+          overflow-x: hidden;
 
           li {
               position: relative;

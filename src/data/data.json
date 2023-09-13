@@ -43,5 +43,10 @@
         "name": "Shopify",
         "logo": "img/shopify.webp",
         "link": "../portfolio/shopify"
+    },
+    {
+        "name": "Woocommerce",
+        "logo": "img/woocommerce.webp",
+        "link": "../portfolio/woocommerce"
     }
 ]

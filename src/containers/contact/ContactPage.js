@@ -1,85 +1,70 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { MdLocationOn, MdEmail } from 'react-icons/md';
 import styled from "styled-components";
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
-    const intialValues = { name: "", email: "", message: "" };
-    const [formValues, setFormValues] = useState(intialValues);
-    const [formErrors, setFormErrors] = useState({});
-    const [isSubmitting, setIsSubmitting] = useState(false);
-    const [isFadingOut, setIsFadingOut] = useState(false);
+  const initialValues = useMemo(() => ({ name: "", email: "", subject: "", message: "" }), []);
+  const [formValues, setFormValues] = useState(initialValues);
+  const [formErrors, setFormErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isFadingOut, setIsFadingOut] = useState(false);
 
-    const sendEmail = (e) => {
-        e.preventDefault();
-        setFormErrors(validate(formValues));
-        setIsSubmitting(true);
-    };
+  const sendEmail = (e) => {
+      e.preventDefault();
+      const errors = validate(formValues);
+      setFormErrors(errors);
+      if (Object.keys(errors).length === 0) {
+          setIsSubmitting(true);
+      }
+  };
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormValues({ ...formValues, [name]: value });
-    };
+  const handleChange = (e) => {
+      const { name, value } = e.target;
+      setFormValues(prevValues => ({ ...prevValues, [name]: value }));
+  };
 
-    const validate = (values) => {
-        let errors = {};
-        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
-        
-        if (!values.name) {
-            errors.name = "The field is empty";
-        } else if (values.name.length < 1) {
-            errors.name = "Please enter a name";
-        }
-        if (!values.email) {
-            errors.email = "The field is empty";
-        } else if (!regex.test(values.email)) {
-            errors.email = "Invalid email format";
-        }
-        if (!values.subject) {
-            errors.subject = "The field is empty";
-        } else if (values.subject.length < 1) {
-            errors.subject = "Please enter a message";
-        }
-        return errors;
-    };
+  const validate = (values) => {
+      let errors = {};
+      const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
 
-    useEffect(() => {
-      /*
-        const submit = () => {
-          document.getElementById("contact-form").reset();
-          setIsFadingOut(false);
-      
-          //emailjs.sendForm('service_yivmgrd', 'gert_template','#contact-form', 'user_ZcMKtjGzxiwS92Xi7ZY3f')
-      
-            .then((result) => {
-              console.log(result.text);
-            }, (error) => {
-                console.log(error.text);
-            }); 
-        }; */
-      
-        const resetForms = () => {
-          setFormValues({
-            name: "",
-            email: "",
-            subject: "",
-          });
-        }
-      
-        if (Object.keys(formErrors).length === 0 && isSubmitting) {
-          //submit();
-          resetForms();
-      
-          setTimeout(() => {
-            setIsFadingOut(true);
-          }, 5000);
-        }
-    }, [formErrors, isSubmitting]);
+      if (!values.name.trim()) {
+          errors.name = "Please enter a name";
+      }
+      if (!values.email.trim()) {
+          errors.email = "The field is empty";
+      } else if (!regex.test(values.email)) {
+          errors.email = "Invalid email format";
+      }
+      if (!values.subject.trim()) {
+          errors.subject = "Please enter a message";
+      }
+      return errors;
+  };
+
+  useEffect(() => {
+    if (!isSubmitting) return;
+
+    const formElement = document.getElementById("contact-form");
+    emailjs.sendForm('service_yivmgrd', 'gert_template', formElement, 'user_ZcMKtjGzxiwS92Xi7ZY3f')
+        .then((result) => {
+            console.log(result.text);
+            formElement.reset();
+            setFormValues(initialValues);
+            setTimeout(() => {
+                setIsFadingOut(true);
+            }, 5000);
+        }, (error) => {
+            console.log(error.text);
+        })
+        .finally(() => {
+            setIsSubmitting(false);
+        });
+}, [isSubmitting, initialValues]);
 
     return (
         <Section id='contact'>
-            <Screen data-sal="slide-down"
-                data-sal-duration="1000"
-                data-sal-easing="ease">
+            <Screen>
                 <div className="screen-header">
                 <div className="screen-header-left">
                     <div className="screen-header-button close"></div>
@@ -171,6 +156,9 @@ const Screen = styled.div`
     width: 100%;
     max-width: 900px;
     margin: 0 auto;
+    opacity: 0;
+    animation: slideInFromBottom 1s forwards;
+    transition: opacity 1s cubic-bezier(.23, 1, .32, 1), transform 1s cubic-bezier(.23, 1, .32, 1);
 
     .screen-header {
       display: flex;
@@ -293,7 +281,7 @@ const SuccessMsg = styled.div`
   width: 100%;
   margin-bottom: 1rem;
   overflow: hidden;
-  transition: all 0.5s ease;
+  transition: all .5s ease;
   height: 20px; 
   transition: opacity 1s, height 1s, margin 1s;
   opacity: 1;
@@ -335,7 +323,7 @@ const InputArea = styled.div`
   display: flex;
   flex-direction: column-reverse;
   width: 100%;
-  border-radius: 0.15rem;
+  border-radius: .15rem;
 
   &:focus-within {
     label {
@@ -353,14 +341,14 @@ const InputArea = styled.div`
   label {
     position: absolute;
     top:  .45rem;
-    left: calc(0.75rem + 1px);
-    margin-bottom: calc(0.75rem * -1.5);
+    left: calc(.75rem + 1px);
+    margin-bottom: calc(.75rem * -1.5);
     font-size: 10px;
     color: var(--title);
     font-weight: 600;
     opacity: 0;
-    transform: translateY(calc(0.75rem / 4));
-    transition: opacity 600ms cubic-bezier(0.22, 1, 0.19, 1), transform 600ms cubic-bezier(0.22, 1, 0.19, 1);
+    transform: translateY(calc(.75rem / 4));
+    transition: opacity 600ms cubic-bezier(.22, 1, .19, 1), transform 600ms cubic-bezier(.22, 1, .19, 1);
   }
 
   .error {    
@@ -430,6 +418,18 @@ const InputArea = styled.div`
     font-family: inherit;
     font-size: inherit;
   }
+
+  @keyframes slideInFromBottom {
+      0% {
+        transform: translateY(30%);
+        opacity: 0;
+      }
+
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
 `;
   
 export default Contact;

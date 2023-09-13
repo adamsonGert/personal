@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@emailjs/browser": "^3.11.0",
     "caniuse-lite": "^1.0.30001488",
     "gatsby": "^5.10.0",
     "gatsby-plugin-dark-mode": "^1.1.2",

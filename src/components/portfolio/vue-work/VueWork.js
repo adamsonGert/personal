@@ -52,13 +52,9 @@ const VueWork = () => {
       </div>
 
       <div className="banner-wrapper">
-        <GatsbyImage image={data.banner.childImageSharp.gatsbyImageData} alt="Image of Vue banner" data-sal="slide-down"
-            data-sal-duration="1000"
-            data-sal-easing="ease"/>
+        <GatsbyImage image={data.banner.childImageSharp.gatsbyImageData} alt="Image of Vue banner"/>
       </div>
-      <div className="about-wrapper" data-sal="slide-down"
-            data-sal-duration="1000"
-            data-sal-easing="ease">
+      <div className="about-wrapper">
         <h4>About VueJS & Firebase Realtime Database</h4>
         <p>
           Vue is a progressive framework for building user interfaces & The Firebase Realtime Database is a cloud-hosted
@@ -66,13 +62,11 @@ const VueWork = () => {
         </p>
       </div>
       <div className="grid grid-left grid-details">
-        <figure className="grid-media" data-sal="slide-right"
-            data-sal-duration="1000"
-            data-sal-easing="ease">
+        <figure className="grid-media">
           <GatsbyImage image={data.platform.childImageSharp.gatsbyImageData} alt="Image of Vue platform" />
         </figure>
-        <div className="grid-text" data-sal="slide-left"
-            data-sal-duration="1000"
+        <div className="grid-text animated-element" data-sal="slide-up"
+            data-sal-duration="800"
             data-sal-easing="ease">
           <div className="list">
             <h4>Details</h4>
@@ -114,108 +108,92 @@ const VueWork = () => {
         </div>
       </div>
 
-      <div className="section-title" data-sal="slide-down"
-            data-sal-duration="1000"
+      <div className="section-title animated-element" data-sal="slide-up"
+            data-sal-duration="800"
             data-sal-easing="ease">Showcase</div>
 
       <div className="grid text-start-5">
-        <figure className="grid-media" data-sal="slide-left"
-            data-sal-duration="1000"
-            data-sal-easing="ease">
-          <GatsbyImage image={data.create.childImageSharp.gatsbyImageData} alt="Image of Create list"/>
-        </figure>
-        <div className="grid-text" data-sal="slide-right"
-            data-sal-duration="1000"
-            data-sal-easing="ease">
-          <p className="heading-title">Create table</p>
-          <h3>Create a new creative</h3>
-          <a href="https://adamsongert.github.io/#/" target="_blank" rel="noreferrer" className="link-more">
-            <span className="arrow -left">
-              <span className="shaft"></span>
-            </span>
-            <span className="main">
-              <span className="arrow-label">See live demo</span>
-              <span className="arrow -right">
-                <span className="shaft"></span>
-              </span>
-            </span>
-          </a>
-        </div>
-      </div>
+            <figure className="grid-media animated-element" data-sal="slide-left" data-sal-duration="800" data-sal-easing="ease">
+              <GatsbyImage image={data.create.childImageSharp.gatsbyImageData} alt="Image of Create list"/>
+            </figure>
+            <div className="grid-text animated-element" data-sal="slide-right" data-sal-duration="800" data-sal-easing="ease">
+              <p className="heading-title">Create table</p>
+              <h3>Create a new creative</h3>
+              <a href="https://adamsongert.github.io/#/" target="_blank" rel="noreferrer" className="link-more">
+                <span className="arrow -left">
+                  <span className="shaft"></span>
+                </span>
+                <span className="main">
+                  <span className="arrow-label">See live demo</span>
+                  <span className="arrow -right">
+                    <span className="shaft"></span>
+                  </span>
+                </span>
+              </a>
+            </div>
+          </div>
 
-      <div className="grid grid-left">
-        <figure className="grid-media" data-sal="slide-right"
-            data-sal-duration="1000"
-            data-sal-easing="ease">
-          <GatsbyImage image={data.list.childImageSharp.gatsbyImageData} alt="Image of Create list table view"/>
-        </figure>
-        <div className="grid-text" data-sal="slide-left"
-            data-sal-duration="1000"
-            data-sal-easing="ease">
-          <p className="heading-title">Table with data</p>
-          <h3>Creative list table view</h3>
-          <a href="https://adamsongert.github.io/#/" target="_blank" rel="noreferrer" className="link-more">
-            <span className="arrow -left">
-              <span className="shaft"></span>
-            </span>
-            <span className="main">
-              <span className="arrow-label">See live demo</span>
-              <span className="arrow -right">
-                <span className="shaft"></span>
-              </span>
-            </span>
-          </a>
-        </div>
-      </div>
+          <div className="grid grid-left">
+            <figure className="grid-media animated-element" data-sal="slide-right" data-sal-duration="800" data-sal-easing="ease">
+              <GatsbyImage image={data.list.childImageSharp.gatsbyImageData} alt="Image of Create list table view"/>
+            </figure>
+            <div className="grid-text animated-element" data-sal="slide-left" data-sal-duration="800" data-sal-easing="ease">
+              <p className="heading-title">Table with data</p>
+              <h3>Creative list table view</h3>
+              <a href="https://adamsongert.github.io/#/" target="_blank" rel="noreferrer" className="link-more">
+                <span className="arrow -left">
+                  <span className="shaft"></span>
+                </span>
+                <span className="main">
+                  <span className="arrow-label">See live demo</span>
+                  <span className="arrow -right">
+                    <span className="shaft"></span>
+                  </span>
+                </span>
+              </a>
+            </div>
+          </div>
 
-      <div className="grid text-start-5">
-        <figure className="grid-media" data-sal="slide-left"
-            data-sal-duration="1000"
-            data-sal-easing="ease">
-          <GatsbyImage image={data.edit.childImageSharp.gatsbyImageData} alt="Image of Table with edit functions"/>
-        </figure>
-        <div className="grid-text" data-sal="slide-right"
-            data-sal-duration="1000"
-            data-sal-easing="ease">
-          <p className="heading-title">Table with edit functions</p>
-          <h3>Creative edit view</h3>
-          <a href="https://adamsongert.github.io/#/" target="_blank" rel="noreferrer" className="link-more">
-            <span className="arrow -left">
-              <span className="shaft"></span>
-            </span>
-            <span className="main">
-              <span className="arrow-label">See live demo</span>
-              <span className="arrow -right">
-                <span className="shaft"></span>
-              </span>
-            </span>
-          </a>
-        </div>
-      </div>
+          <div className="grid text-start-5">
+            <figure className="grid-media animated-element" data-sal="slide-left" data-sal-duration="800" data-sal-easing="ease">
+              <GatsbyImage image={data.edit.childImageSharp.gatsbyImageData} alt="Image of Table with edit functions"/>
+            </figure>
+            <div className="grid-text animated-element" data-sal="slide-right" data-sal-duration="800" data-sal-easing="ease">
+              <p className="heading-title">Table with edit functions</p>
+              <h3>Creative edit view</h3>
+              <a href="https://adamsongert.github.io/#/" target="_blank" rel="noreferrer" className="link-more">
+                <span className="arrow -left">
+                  <span className="shaft"></span>
+                </span>
+                <span className="main">
+                  <span className="arrow-label">See live demo</span>
+                  <span className="arrow -right">
+                    <span className="shaft"></span>
+                  </span>
+                </span>
+              </a>
+            </div>
+          </div>
 
-      <div className="grid grid-left">
-        <figure className="grid-media" data-sal="slide-right"
-            data-sal-duration="1000"
-            data-sal-easing="ease">
-          <GatsbyImage image={data.form.childImageSharp.gatsbyImageData} alt="Image of Table form information" />
-        </figure>
-        <div className="grid-text" data-sal="slide-left"
-            data-sal-duration="1000"
-            data-sal-easing="ease">
-          <p className="heading-title">Table with form information</p>
-          <h3>Creative form info</h3>
-          <a href="https://adamsongert.github.io/#/" target="_blank" rel="noreferrer" className="link-more">
-            <span className="arrow -left">
-              <span className="shaft"></span>
-            </span>
-            <span className="main">
-              <span className="arrow-label">See live demo</span>
-              <span className="arrow -right">
-                <span className="shaft"></span>
-              </span>
-            </span>
-          </a>
-        </div>
+          <div className="grid grid-left">
+            <figure className="grid-media animated-element" data-sal="slide-right" data-sal-duration="800" data-sal-easing="ease">
+              <GatsbyImage image={data.form.childImageSharp.gatsbyImageData} alt="Image of Table form information" />
+            </figure>
+            <div className="grid-text animated-element" data-sal="slide-left" data-sal-duration="800" data-sal-easing="ease">
+              <p className="heading-title">Table with form information</p>
+              <h3>Creative form info</h3>
+              <a href="https://adamsongert.github.io/#/" target="_blank" rel="noreferrer" className="link-more">
+                <span className="arrow -left">
+                  <span className="shaft"></span>
+                </span>
+                <span className="main">
+                  <span className="arrow-label">See live demo</span>
+                  <span className="arrow -right">
+                    <span className="shaft"></span>
+                  </span>
+                </span>
+              </a>
+            </div>
       </div>
     </PortfolioPageWrapper>
   );

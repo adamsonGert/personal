@@ -48,7 +48,9 @@ const XoloWork = () => {
       <div className="banner-wrapper">
         <GatsbyImage image={data.banner.childImageSharp.gatsbyImageData} className="banner-img" alt="Image of Xolo banner" />
       </div>
-      <div className="about-wrapper">
+      <div className="about-wrapper animated-element" data-sal="slide-up"
+          data-sal-duration="800"
+          data-sal-easing="ease">
         <h4>About Xolo</h4>
         <p>
           Xolo is an all-in-one SaaS platform for solopreneurs, bringing together banking, company formation, accounting,
@@ -60,7 +62,9 @@ const XoloWork = () => {
         <figure className="grid-media">
           <GatsbyImage image={data.platform.childImageSharp.gatsbyImageData} className="platform-img" alt="Image of Xolo platform" />
         </figure>
-        <div className="grid-text">
+        <div className="grid-text animated-element" data-sal="slide-up"
+            data-sal-duration="800"
+            data-sal-easing="ease">
           <div className="list">
             <h4>Details</h4>
             <ul>
@@ -84,7 +88,7 @@ const XoloWork = () => {
               </li>
             </ul>
           </div>
-
+  
           <div className="list">
             <h4>Work in Xolo</h4>
             <ul>
@@ -108,17 +112,25 @@ const XoloWork = () => {
           </div>
         </div>
       </div>
-
-      <div className="section-title">Showcase</div>
-
+  
+      <div className="section-title animated-element" data-sal="slide-up"
+          data-sal-duration="800"
+          data-sal-easing="ease">
+        Showcase
+      </div>
+  
       <div className="grid">
-        <figure className="grid-media">
+        <figure className="grid-media animated-element" data-sal="slide-left"
+            data-sal-duration="800"
+            data-sal-easing="ease">
           <GatsbyImage image={data.pages.childImageSharp.gatsbyImageData} alt="Image of re-branded pages" />
         </figure>
-        <div className="grid-text">
+        <div className="grid-text animated-element" data-sal="slide-right"
+            data-sal-duration="800"
+            data-sal-easing="ease">
           <p className="heading-title">Re-branding</p>
           <h3>Before & After versions of Xolo's homepage.</h3>
-
+  
           <a href="https://www.xolo.io" target="_blank" rel="noreferrer" className="link-more">
             <span className="arrow -left">
               <span className="shaft"></span>
@@ -133,10 +145,14 @@ const XoloWork = () => {
         </div>
       </div>
       <div className="grid grid-left">
-        <figure className="grid-media">
+        <figure className="grid-media animated-element" data-sal="slide-right"
+            data-sal-duration="800"
+            data-sal-easing="ease">
           <GatsbyImage image={data.interactive.childImageSharp.gatsbyImageData} alt="Image of interactive component blocks" />
         </figure>
-        <div className="grid-text">
+        <div className="grid-text animated-element" data-sal="slide-left"
+            data-sal-duration="800"
+            data-sal-easing="ease">
           <p className="heading-title">Blocks</p>
           <h3>Interactive component blocks</h3>
           <a href="https://web.archive.org/web/20200704055206/https://www.xolo.io/" rel="noreferrer" className="link-more">
@@ -153,10 +169,14 @@ const XoloWork = () => {
         </div>
       </div>
       <div className="grid">
-        <figure className="grid-media">
+        <figure className="grid-media animated-element" data-sal="slide-left"
+            data-sal-duration="800"
+            data-sal-easing="ease">
           <GatsbyImage image={data.pricing.childImageSharp.gatsbyImageData} alt="Image of pricing component" />
         </figure>
-        <div className="grid-text">
+        <div className="grid-text animated-element" data-sal="slide-right"
+            data-sal-duration="800"
+            data-sal-easing="ease">
           <p className="heading-title">Pricing</p>
           <h3>Fully responsive pricing page component that can be re-used in multiple pages</h3>
           <a href="https://www.xolo.io/zz-en/pricing" rel="noreferrer" className="link-more">
@@ -173,10 +193,14 @@ const XoloWork = () => {
         </div>
       </div>
       <div className="grid grid-left">
-        <figure className="grid-media">
+        <figure className="grid-media animated-element" data-sal="slide-right"
+            data-sal-duration="800"
+            data-sal-easing="ease">
           <GatsbyImage image={data.hero.childImageSharp.gatsbyImageData} alt="Image of hero block" />
         </figure>
-        <div className="grid-text">
+        <div className="grid-text animated-element" data-sal="slide-left"
+            data-sal-duration="800"
+            data-sal-easing="ease">
           <p className="heading-title">Blocks</p>
           <h3>Hero area</h3>
           <a href="https://www.xolo.io/zz-en/go" rel="noreferrer" className="link-more">

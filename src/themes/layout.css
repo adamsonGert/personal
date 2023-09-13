@@ -18,7 +18,6 @@ body {
     --hr: #ebeff2;
 }
 
-/* Dark Mode */
 body.dark {
     --background: #010c17;
     --navbar: rgba(1, 12, 23, .9);

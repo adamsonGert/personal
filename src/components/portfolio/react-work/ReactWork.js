@@ -52,14 +52,12 @@ const ReactWork = () => {
         <GatsbyImage
           className="banner-img"
           image={data.banner.childImageSharp.gatsbyImageData}
-          alt="Image of React banner" data-sal="fade"
-          data-sal-duration="1000"
-          data-sal-easing="ease"
+          alt="Image of React banner"
         />
       </div>
       
-      <div className="about-wrapper" data-sal="slide-down"
-            data-sal-duration="1000"
+      <div className="about-wrapper animated-element" data-sal="slide-up"
+            data-sal-duration="800"
             data-sal-easing="ease">
         <h4>About React & Firebase Authentication</h4>
         <p>
@@ -68,17 +66,15 @@ const ReactWork = () => {
       </div>
       
       <div className="grid grid-left grid-details">
-        <figure className="grid-media" data-sal="slide-right"
-            data-sal-duration="1000"
-            data-sal-easing="ease">
+        <figure className="grid-media">
           <GatsbyImage
             className="platform-img"
             image={data.platform.childImageSharp.gatsbyImageData}
             alt="Image of React platform"
           />
         </figure>
-        <div className="grid-text" data-sal="slide-left"
-            data-sal-duration="1000"
+        <div className="grid-text animated-element" data-sal="slide-up"
+            data-sal-duration="800"
             data-sal-easing="ease">
           <div className="list">
             <h4>Details</h4>
@@ -98,20 +94,20 @@ const ReactWork = () => {
         </div>
       </div>
 
-      <div className="section-title" data-sal="fade"
-            data-sal-duration="1000"
+      <div className="section-title animated-element" data-sal="slide-up"
+            data-sal-duration="800"
             data-sal-easing="ease">
         Showcase
       </div>
 
       <div className="grid text-start-5">
-        <figure className="grid-media" data-sal="slide-left"
-            data-sal-duration="1000"
+        <figure className="grid-media animated-element" data-sal="slide-left"
+            data-sal-duration="800"
             data-sal-easing="ease">
           <GatsbyImage image={data.loginsignup.childImageSharp.gatsbyImageData} alt="Image of Login and Signup page"/>
         </figure>
-        <div className="grid-text" data-sal="slide-right"
-            data-sal-duration="1000"
+        <div className="grid-text animated-element" data-sal="slide-right"
+            data-sal-duration="800"
             data-sal-easing="ease">
           <p className="heading-title">Authentication page</p>
           <h3>Login & Signup page</h3>
@@ -130,13 +126,13 @@ const ReactWork = () => {
       </div>
 
       <div className="grid grid-left">
-        <figure className="grid-media" data-sal="slide-right"
-            data-sal-duration="1000"
+        <figure className="grid-media animated-element" data-sal="slide-right"
+            data-sal-duration="800"
             data-sal-easing="ease">
           <GatsbyImage image={data.dashboard.childImageSharp.gatsbyImageData} alt="Image of Dashboard"/>
         </figure>
-        <div className="grid-text" data-sal="slide-left"
-            data-sal-duration="1000"
+        <div className="grid-text animated-element" data-sal="slide-left"
+            data-sal-duration="800"
             data-sal-easing="ease">
           <p className="heading-title">Dashboard</p>
           <h3>Dashboard view</h3>
@@ -156,13 +152,13 @@ const ReactWork = () => {
       </div>
 
       <div className="grid text-start-5">
-        <figure className="grid-media" data-sal="slide-left"
-            data-sal-duration="1000"
+        <figure className="grid-media animated-element" data-sal="slide-left"
+            data-sal-duration="800"
             data-sal-easing="ease">
           <GatsbyImage image={data.edit.childImageSharp.gatsbyImageData} alt="Image of edit page"/>
         </figure>
-        <div className="grid-text" data-sal="slide-right"
-            data-sal-duration="1000"
+        <div className="grid-text animated-element" data-sal="slide-right"
+            data-sal-duration="800"
             data-sal-easing="ease">
           <p className="heading-title">Profile</p>
           <h3>Profile edit page</h3>
@@ -182,13 +178,13 @@ const ReactWork = () => {
       </div>
 
       <div className="grid grid-left">
-        <figure className="grid-media" data-sal="slide-right"
-            data-sal-duration="1000"
+        <figure className="grid-media animated-element" data-sal="slide-right"
+            data-sal-duration="800"
             data-sal-easing="ease">
           <GatsbyImage image={data.todo.childImageSharp.gatsbyImageData} alt="Image of ToDo page"/>
         </figure>
-        <div className="grid-text" data-sal="slide-left"
-            data-sal-duration="1000"
+        <div className="grid-text animated-element" data-sal="slide-left"
+            data-sal-duration="800"
             data-sal-easing="ease">
           <p className="heading-title">To-do</p>
           <h3>To-do Page</h3>

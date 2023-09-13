@@ -14,6 +14,7 @@ import HubspotWork from './portfolio/hubspot-work';
 import StorybookWork from './portfolio/storybook-work';
 import ShopifyWork from './portfolio/shopify-work';
 import XoloWork from './portfolio/xolo-work';
+import WoocommerceWork from './portfolio/woocommerce-work';
 import Footer from './footer';
 import Sidebar from './sidebar';
 import Seo from './seo';
@@ -34,6 +35,7 @@ export {
   HubspotWork,
   StorybookWork,
   XoloWork,
+  WoocommerceWork,
   Hero,
   Footer,
   Sidebar,

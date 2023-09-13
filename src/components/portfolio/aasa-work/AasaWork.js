@@ -36,22 +36,26 @@ const AasaWork = () => {
   }
 `)
   
-return (
+  return (
     <PortfolioPageWrapper>
       <Link to='/portfolio' className="link-back"><FaArrowLeft />Projects</Link>
       <div className="banner-wrapper">
         <GatsbyImage className="banner-img" image={data.banner.childImageSharp.gatsbyImageData} alt="Aasa Banner image" />
       </div>
-      <div className="about-wrapper">
+      <div className="about-wrapper animated-element" data-sal="slide-up"
+          data-sal-duration="800"
+          data-sal-easing="ease">
         <h4>About Aasa</h4>
         <p>Aasa Global is an international financial technology company established in 2011 which offers credit solutions to consumers and small-to medium sized businesses.</p>
         <p>Aasa operates in Estonia, Poland, Finland, Sweden, Chile and Indonesia, is constantly seeking for new business opportunities by developing new innovative financing solutionsand looking for expansion to markets with high growth-potential.</p>
       </div>
       <div className="grid grid-left grid-details">
         <figure className="grid-media">
-            <GatsbyImage className="platform-img" image={data.smallbanner.childImageSharp.gatsbyImageData} alt="Aasa platform image" />
+          <GatsbyImage className="platform-img" image={data.smallbanner.childImageSharp.gatsbyImageData} alt="Aasa platform image" />
         </figure>
-        <div className="grid-text">
+        <div className="grid-text animated-element" data-sal="slide-up"
+            data-sal-duration="800"
+            data-sal-easing="ease">
           <div className="list">
             <h4>Details</h4>
             <ul>
@@ -73,15 +77,21 @@ return (
         </div>
       </div>
 
-      <div className="section-title">
+      <div className="section-title animated-element" data-sal="slide-up"
+          data-sal-duration="800"
+          data-sal-easing="ease">
         Showcase
       </div>
 
       <div className="grid">
-        <figure className="grid-media">
-            <GatsbyImage image={data.pages.childImageSharp.gatsbyImageData} alt="Image of pages" />
+        <figure className="grid-media animated-element" data-sal="slide-left"
+            data-sal-duration="800"
+            data-sal-easing="ease">
+          <GatsbyImage image={data.pages.childImageSharp.gatsbyImageData} alt="Image of pages" />
         </figure>
-        <div className="grid-text">
+        <div className="grid-text animated-element" data-sal="slide-right"
+            data-sal-duration="800"
+            data-sal-easing="ease">
           <p className="heading-title">Pages</p>
           <h3>Working on Aasa's Finnish & Swedish sites</h3>
 
@@ -110,10 +120,14 @@ return (
         </div>
       </div>
       <div className="grid grid-left">
-        <figure className="grid-media">
-            <GatsbyImage image={data.interactive.childImageSharp.gatsbyImageData} alt="Image of calculator"/>
+        <figure className="grid-media animated-element" data-sal="slide-right"
+            data-sal-duration="800"
+            data-sal-easing="ease">
+          <GatsbyImage image={data.interactive.childImageSharp.gatsbyImageData} alt="Image of calculator"/>
         </figure>
-        <div className="grid-text">
+        <div className="grid-text animated-element" data-sal="slide-left"
+            data-sal-duration="800"
+            data-sal-easing="ease">
           <p className="heading-title">Interactive</p>
           <h3>A loan calculator that calculates loan period, monthly installment or loan amount.</h3>
           <a href="https://www.aasa.fi/lainalaskuri" target="_blank" rel="noreferrer" className="link-more">
@@ -130,10 +144,14 @@ return (
         </div>
       </div>
       <div className="grid">
-        <figure className="grid-media">
-            <GatsbyImage image={data.email.childImageSharp.gatsbyImageData} alt="Image of Aasa's newsletter"/>
+        <figure className="grid-media animated-element" data-sal="slide-left"
+            data-sal-duration="800"
+            data-sal-easing="ease">
+          <GatsbyImage image={data.email.childImageSharp.gatsbyImageData} alt="Image of Aasa's newsletter"/>
         </figure>
-        <div className="grid-text">
+        <div className="grid-text animated-element" data-sal="slide-right"
+            data-sal-duration="800"
+            data-sal-easing="ease">
           <p className="heading-title">Email templates</p>
           <h3>Creating & Managing Aasa's newsletter's</h3>
         </div>

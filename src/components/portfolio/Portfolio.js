@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useStaticQuery, graphql } from "gatsby";
 import styled from 'styled-components';
 import { GatsbyImage } from "gatsby-plugin-image"
@@ -26,6 +26,12 @@ const Portfolio = () => {
     }
   `);
 
+  const [isPageLoaded, setIsPageLoaded] = useState(false);
+
+  useEffect(() => {
+    setIsPageLoaded(true);
+  }, []);
+
   const ref = useRef();
 
   const items = data.allDataJson.edges;
@@ -34,14 +40,17 @@ const Portfolio = () => {
     <Section id='portfolio'>
       <PortfolioWrapper ref={ref}>
         {items.map(({ node }, index) =>
-          <Link to={`${node.link}`} key={index} className="portfolio-item" data-sal="slide-down" data-sal-duration="1000">
+          <Link 
+            to={`${node.link}`} 
+            key={index} 
+            className={`portfolio-item ${isPageLoaded ? 'page-loaded' : ''}`}
+            style={!isPageLoaded ? { opacity: 0, transform: 'translateY(-20px)' } : {}}
+          >
             {node.logo && <GatsbyImage image={node.logo.childImageSharp.gatsbyImageData} alt={`${node.name} image`} />}
           </Link>
         )}
       </PortfolioWrapper>
     </Section>
-
-
   );
 };
 
@@ -83,6 +92,25 @@ const PortfolioWrapper = styled.div`
     background: var(--portfolioItemBg);
     cursor: pointer;
     overflow: hidden;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity .5s ease-out, transform .5s ease-out;
+
+    &.page-loaded {
+      opacity: 1;
+      transform: translateY(0);
+  }
+
+    &:nth-child(1).page-loaded { transition-delay: .2s; }
+    &:nth-child(2).page-loaded { transition-delay: .4s; }
+    &:nth-child(3).page-loaded { transition-delay: .6s; }
+    &:nth-child(4).page-loaded { transition-delay: .8s; }
+    &:nth-child(5).page-loaded { transition-delay: 1s; }
+    &:nth-child(6).page-loaded { transition-delay: 1.2s; }
+    &:nth-child(7).page-loaded { transition-delay: 1.4s; }
+    &:nth-child(8).page-loaded { transition-delay: 1.6s; }
+    &:nth-child(9).page-loaded { transition-delay: 1.8s; }
+    &:nth-child(10).page-loaded { transition-delay: 2s; }
 
     @media (min-width: 1440px) {
       height: 100%;

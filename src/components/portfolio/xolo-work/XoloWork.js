@@ -184,7 +184,7 @@ const XoloWork = () => {
               <span className="shaft"></span>
             </span>
             <span className="main">
-              <span className="arrow-label">See more</span>
+              <span className="arrow-label">Explore</span>
               <span className="arrow -right">
                 <span className="shaft"></span>
               </span>

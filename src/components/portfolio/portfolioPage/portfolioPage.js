@@ -44,6 +44,7 @@ width: 100%;
 
 h4 {
   margin-bottom: 16px;
+  color: var(--primary);
 }
 
 .about-wrapper {
@@ -216,13 +217,13 @@ h4 {
     > .arrow.-left {
       > .shaft {
         width: 45px;
-        transition-delay: 0.1s;
+        transition-delay: .1s;
         background-color: var(--primary);
 
         &:before,
         &:after {
           width: 8px;
-          transition-delay: 0.1s;
+          transition-delay: .1s;
           background-color: var(--primary);
         }
 
@@ -243,12 +244,12 @@ h4 {
         > .shaft {
           width: 0;
           transform: translateX(200%);
-          transition-delay: 0;
+          transition-delay: 0s;
           
           &:before,
           &:after {
             width: 0;
-            transition-delay: 0;
+            transition-delay: 0s;
             transition: all 0.1s;
           }
 
@@ -274,7 +275,7 @@ h4 {
       height: 1px;
       position: relative;
       transition: all 0.2s;
-      transition-delay: 0;
+      transition-delay: 0s;
       will-change: transform;
 
       &:after,
@@ -287,7 +288,7 @@ h4 {
         top: 0;
         right: 0;
         transition: all 0.2s;
-        transition-delay: 0;
+        transition-delay: 0s;
       }
 
       &:before {

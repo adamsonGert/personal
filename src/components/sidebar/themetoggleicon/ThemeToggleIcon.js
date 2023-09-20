@@ -1,6 +1,6 @@
 import React from "react";
 import { useSpring, animated } from "react-spring";
-
+import styled from 'styled-components';
 
 const ThemeToggleIcon = ({ isDarkMode, onToggle }) => {
   const properties = {
@@ -47,7 +47,7 @@ const ThemeToggleIcon = ({ isDarkMode, onToggle }) => {
   });
 
   return (
-    <animated.svg
+    <StyledSvg
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
@@ -89,8 +89,16 @@ const ThemeToggleIcon = ({ isDarkMode, onToggle }) => {
         <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
         <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
       </animated.g>
-    </animated.svg>
+    </StyledSvg>
   );
 };
+
+const StyledSvg = styled(animated.svg)`
+  transition: .2s;
+  &:hover,
+  &:focus {
+    color: var(--primary);
+  }
+`;
 
 export default ThemeToggleIcon;

@@ -124,7 +124,7 @@ const VueWork = () => {
                   <span className="shaft"></span>
                 </span>
                 <span className="main">
-                  <span className="arrow-label">See live demo</span>
+                  <span className="arrow-label">Live demo</span>
                   <span className="arrow -right">
                     <span className="shaft"></span>
                   </span>
@@ -145,7 +145,7 @@ const VueWork = () => {
                   <span className="shaft"></span>
                 </span>
                 <span className="main">
-                  <span className="arrow-label">See live demo</span>
+                  <span className="arrow-label">Live demo</span>
                   <span className="arrow -right">
                     <span className="shaft"></span>
                   </span>
@@ -166,7 +166,7 @@ const VueWork = () => {
                   <span className="shaft"></span>
                 </span>
                 <span className="main">
-                  <span className="arrow-label">See live demo</span>
+                  <span className="arrow-label">Live demo</span>
                   <span className="arrow -right">
                     <span className="shaft"></span>
                   </span>
@@ -187,7 +187,7 @@ const VueWork = () => {
                   <span className="shaft"></span>
                 </span>
                 <span className="main">
-                  <span className="arrow-label">See live demo</span>
+                  <span className="arrow-label">Live demo</span>
                   <span className="arrow -right">
                     <span className="shaft"></span>
                   </span>

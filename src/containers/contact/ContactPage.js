@@ -2,6 +2,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { MdLocationOn, MdEmail } from 'react-icons/md';
 import styled from "styled-components";
 import emailjs from '@emailjs/browser';
+import { FaCheckCircle } from 'react-icons/fa';
 
 const Contact = () => {
   const initialValues = useMemo(() => ({ name: "", email: "", subject: "", message: "" }), []);
@@ -91,40 +92,40 @@ const Contact = () => {
                 </div>
                 <div className="screen-body-item">
                     <ContactForm className="contact-form" id="contact-form" onSubmit={sendEmail} noValidate>
-                    <InputArea className="input-group">
-                        <input type="text" aria-label="Name input" name="name" placeholder="Name" value={formValues.name}
-                        onChange={handleChange}
-                        className={formErrors.name && "input-error"} />
-                        <label htmlFor="name">Name</label>
-                        {formErrors.name && (
-                        <div className="error">{formErrors.name}</div>
-                        )}
-                    </InputArea>
-                    <InputArea className="input-group">
-                        <input type="email" aria-label="Email input" name="email" placeholder="Email" value={formValues.email}
-                        onChange={handleChange}
-                        className={formErrors.email && "input-error"} />
-                        <label htmlFor="email">Email</label>
-                        {formErrors.email && (
-                        <div className="error">{formErrors.email}</div>
-                        )}
-                    </InputArea>
-                    <InputArea className="input-group">
-                        <textarea rows="5" aria-label="Message text" type="text" name="subject" placeholder="Message" value={formValues.subject}
-                        onChange={handleChange}
-                        className={formErrors.subject && "input-error"} />
-                        <label htmlFor="subject">Message</label>
-                        {formErrors.subject && (
-                        <div className="error">{formErrors.subject}</div>
-                        )}
-                    </InputArea>
-                    <input type="submit" aria-label="Submit button" className="btn-send" value="Send" />
+                        <InputArea className="input-group">
+                            <input type="text" aria-label="Name input" name="name" id="name" placeholder="Name" value={formValues.name}
+                            onChange={handleChange}
+                            className={formErrors.name && "input-error"} />
+                            <label htmlFor="name">Name</label>
+                            {formErrors.name && (
+                            <div className="error">{formErrors.name}</div>
+                            )}
+                        </InputArea>
+                        <InputArea className="input-group">
+                            <input type="email" aria-label="Email input" name="email" id="email" placeholder="Email" value={formValues.email}
+                            onChange={handleChange}
+                            className={formErrors.email && "input-error"} />
+                            <label htmlFor="email">Email</label>
+                            {formErrors.email && (
+                            <div className="error">{formErrors.email}</div>
+                            )}
+                        </InputArea>
+                        <InputArea className="input-group">
+                            <textarea rows="5" aria-label="Message text" name="subject" id="subject" placeholder="Message" value={formValues.subject}
+                            onChange={handleChange}
+                            className={formErrors.subject && "input-error"} />
+                            <label htmlFor="subject">Message</label>
+                            {formErrors.subject && (
+                            <div className="error">{formErrors.subject}</div>
+                            )}
+                        </InputArea>
+                        <input type="submit" aria-label="Submit button" className="btn-send" value="Send" />
                     </ContactForm>
-                </div>
+                  </div>
                 </div>
             </Screen>
-            {Object.keys(formErrors).length === 0 && isSubmitting && (
-                <SuccessMsg className={isFadingOut ? 'msg-fadeout' : ''}>Message was sent successfully</SuccessMsg>
+           {Object.keys(formErrors).length === 0 && isSubmitting && (
+                <SuccessMsg className={isFadingOut ? 'msg-fadeout' : ''}><FaCheckCircle />Message was sent successfully</SuccessMsg>
             )}
       </Section>
     );
@@ -136,6 +137,7 @@ const Section = styled.section`
     display: flex;
     align-items: center;
     padding-top: 100px;
+    position: relative;
 
     @media (min-width: 769px) {
         height: 100vh;
@@ -144,7 +146,7 @@ const Section = styled.section`
 
     .msg-fadeout {
         opacity: 0;
-        transition: opacity 1s, height 1s, margin 1s;
+        transition: opacity 2s, height 2s, margin 2s;
         height: 0;
         margin-bottom: 0;
     }
@@ -277,21 +279,35 @@ const Screen = styled.div`
 `;
 
 const SuccessMsg = styled.div`
-  color: #13c399;
-  width: 100%;
-  margin-bottom: 1rem;
-  overflow: hidden;
-  transition: all .5s ease;
-  height: 20px; 
-  transition: opacity 1s, height 1s, margin 1s;
-  opacity: 1;
-  display: table;
-  position: absolute;
-  margin-left: auto;
-  margin-right: auto;
-  left: 0;
-  right: 0;
-  text-align: center;
+    background: #13c399;
+    font-weight: 500;
+    width: 100%;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    transition: opacity 2s,height 2s,margin 2s;
+    opacity: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    bottom: auto;
+    top: 50%;
+    width: fit-content;
+    padding: 1rem;
+    border-radius: 5px;
+
+    @media (min-width: 769px) {
+      top: auto;
+      bottom: 5rem;
+    }
+
+    svg {
+      margin-right: .5rem;
+    }
 `;
 
 const ContactForm = styled.form`
@@ -414,7 +430,6 @@ const InputArea = styled.div`
 
   textarea {
     height: auto;
-    font-display: block;
     font-family: inherit;
     font-size: inherit;
   }

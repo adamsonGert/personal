@@ -1,7 +1,7 @@
 import React from "react";
 import PortfolioPageWrapper from '../portfolioPage';
 import { useStaticQuery, Link, graphql } from "gatsby";
-import { FaCalendarAlt, FaTag, FaArrowLeft, FaSuitcase, FaArrowRight } from 'react-icons/fa';
+import { FaCalendarAlt, FaTag, FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import { GatsbyImage } from "gatsby-plugin-image";
 
 const VueWork = () => {
@@ -17,22 +17,22 @@ const VueWork = () => {
           gatsbyImageData(layout: FULL_WIDTH)
         }
       }
-      create: file(relativePath: { eq: "portfolio/vue/gallery/create-view.webp" }) {
+      login: file(relativePath: { eq: "portfolio/vue/gallery/login-page.webp" }) {
         childImageSharp {
           gatsbyImageData(layout: FULL_WIDTH)
         }
       }
-      edit: file(relativePath: { eq: "portfolio/vue/gallery/edit-view.webp" }) {
+      booking: file(relativePath: { eq: "portfolio/vue/gallery/booking-component.webp" }) {
         childImageSharp {
           gatsbyImageData(layout: FULL_WIDTH)
         }
       }
-      list: file(relativePath: { eq: "portfolio/vue/gallery/list-view.webp" }) {
+      viewBooking: file(relativePath: { eq: "portfolio/vue/gallery/view-booking-component.webp" }) {
         childImageSharp {
           gatsbyImageData(layout: FULL_WIDTH)
         }
       }
-      form: file(relativePath: { eq: "portfolio/vue/gallery/form-info-view.webp" }) {
+      edit: file(relativePath: { eq: "portfolio/vue/gallery/edit-booking.webp" }) {
         childImageSharp {
           gatsbyImageData(layout: FULL_WIDTH)
         }
@@ -55,9 +55,9 @@ const VueWork = () => {
         <GatsbyImage image={data.banner.childImageSharp.gatsbyImageData} alt="Image of Vue banner"/>
       </div>
       <div className="about-wrapper">
-        <h4>About VueJS & Firebase Realtime Database</h4>
+        <h4>About VueJS 3 & Firebase Realtime Database</h4>
         <p>
-          Vue is a progressive framework for building user interfaces & The Firebase Realtime Database is a cloud-hosted
+          Vue3 is a progressive framework for building user interfaces & The Firebase Realtime Database is a cloud-hosted
           database.
         </p>
       </div>
@@ -74,19 +74,13 @@ const VueWork = () => {
               <li>
                 <FaCalendarAlt />
                 <span>
-                  <strong>Date:</strong>&nbsp;April, 2019
+                  <strong>Date:</strong>&nbsp;October, 2023
                 </span>
               </li>
               <li>
                 <FaTag />
                 <span>
-                  <strong>Category:</strong>&nbsp;Creative list with functions
-                </span>
-              </li>
-              <li>
-                <FaSuitcase />
-                <span>
-                  <strong>Company:</strong>&nbsp;NEXD
+                  <strong>Category:</strong>&nbsp;Booking system with CRUD functions 
                 </span>
               </li>
             </ul>
@@ -101,7 +95,11 @@ const VueWork = () => {
               </li>
               <li>
                 <FaArrowRight />
-                Learn how Firebase database integration works
+                Use TailwindCSS
+              </li>
+              <li>
+                <FaArrowRight />
+                Learn Firebase data handling & authentication
               </li>
             </ul>
           </div>
@@ -114,12 +112,12 @@ const VueWork = () => {
 
       <div className="grid text-start-5">
             <figure className="grid-media animated-element" data-sal="slide-left" data-sal-duration="800" data-sal-easing="ease">
-              <GatsbyImage image={data.create.childImageSharp.gatsbyImageData} alt="Image of Create list"/>
+              <GatsbyImage image={data.login.childImageSharp.gatsbyImageData} alt="Image of Create list"/>
             </figure>
             <div className="grid-text animated-element" data-sal="slide-right" data-sal-duration="800" data-sal-easing="ease">
-              <p className="heading-title">Create table</p>
-              <h3>Create a new creative</h3>
-              <a href="https://adamsongert.github.io/#/" target="_blank" rel="noreferrer" className="link-more">
+              <p className="heading-title">Authentication</p>
+              <h3>Log in or create a new account for access</h3>
+              <a href="https://vue-bookify.netlify.app/" target="_blank" rel="noreferrer" className="link-more">
                 <span className="arrow -left">
                   <span className="shaft"></span>
                 </span>
@@ -135,12 +133,12 @@ const VueWork = () => {
 
           <div className="grid grid-left">
             <figure className="grid-media animated-element" data-sal="slide-right" data-sal-duration="800" data-sal-easing="ease">
-              <GatsbyImage image={data.list.childImageSharp.gatsbyImageData} alt="Image of Create list table view"/>
+              <GatsbyImage image={data.booking.childImageSharp.gatsbyImageData} alt="Image of Create list table view"/>
             </figure>
             <div className="grid-text animated-element" data-sal="slide-left" data-sal-duration="800" data-sal-easing="ease">
-              <p className="heading-title">Table with data</p>
-              <h3>Creative list table view</h3>
-              <a href="https://adamsongert.github.io/#/" target="_blank" rel="noreferrer" className="link-more">
+              <p className="heading-title">Form</p>
+              <h3>Booking form that sends data to Firebase</h3>
+              <a href="https://vue-bookify.netlify.app/" target="_blank" rel="noreferrer" className="link-more">
                 <span className="arrow -left">
                   <span className="shaft"></span>
                 </span>
@@ -156,12 +154,12 @@ const VueWork = () => {
 
           <div className="grid text-start-5">
             <figure className="grid-media animated-element" data-sal="slide-left" data-sal-duration="800" data-sal-easing="ease">
-              <GatsbyImage image={data.edit.childImageSharp.gatsbyImageData} alt="Image of Table with edit functions"/>
+              <GatsbyImage image={data.viewBooking.childImageSharp.gatsbyImageData} alt="Image of Table with edit functions"/>
             </figure>
             <div className="grid-text animated-element" data-sal="slide-right" data-sal-duration="800" data-sal-easing="ease">
-              <p className="heading-title">Table with edit functions</p>
-              <h3>Creative edit view</h3>
-              <a href="https://adamsongert.github.io/#/" target="_blank" rel="noreferrer" className="link-more">
+              <p className="heading-title">Bookings</p>
+              <h3>Table layout of bookings</h3>
+              <a href="https://vue-bookify.netlify.app/" target="_blank" rel="noreferrer" className="link-more">
                 <span className="arrow -left">
                   <span className="shaft"></span>
                 </span>
@@ -177,12 +175,12 @@ const VueWork = () => {
 
           <div className="grid grid-left">
             <figure className="grid-media animated-element" data-sal="slide-right" data-sal-duration="800" data-sal-easing="ease">
-              <GatsbyImage image={data.form.childImageSharp.gatsbyImageData} alt="Image of Table form information" />
+              <GatsbyImage image={data.edit.childImageSharp.gatsbyImageData} alt="Image of Table form information" />
             </figure>
             <div className="grid-text animated-element" data-sal="slide-left" data-sal-duration="800" data-sal-easing="ease">
-              <p className="heading-title">Table with form information</p>
-              <h3>Creative form info</h3>
-              <a href="https://adamsongert.github.io/#/" target="_blank" rel="noreferrer" className="link-more">
+              <p className="heading-title">Edit</p>
+              <h3>Modal for editing existing bookings</h3>
+              <a href="https://vue-bookify.netlify.app/" target="_blank" rel="noreferrer" className="link-more">
                 <span className="arrow -left">
                   <span className="shaft"></span>
                 </span>
